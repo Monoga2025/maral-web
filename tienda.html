@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda — Industrias Maral | Antenas y Bases para Radio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0!important}
+:root{
+  --navy:  #04122A; --navy2: #082040; --blue: #1255A8;
+  --org:   #0EA5E9; --org2:  #38BDF8;
+  --bg:    #EFF5FC; --bg2:   #FFFFFF;
+  --txt:   #080F1E; --txt2:  #364B66; --txt3: #7A90A8;
+  --bdr:   #C8D8EC; --bdr2:  #A8C0DC;
+  --green: #059669;
+  --f: 'Barlow',sans-serif; --d: 'Barlow Condensed',sans-serif; --m: 'DM Mono',monospace;
+  --max: 1340px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--f);overflow-x:hidden}
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#eee}
+::-webkit-scrollbar-thumb{background:#bbc}
+button,input,select{font-family:var(--f)}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy);color:rgba(255,255,255,.65);font-size:12px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.65);transition:color .18s}.topbar a:hover{color:#fff}
+.tb-r{display:flex;gap:20px}
+
+/* ── NAV ── */
+#nav{
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid rgba(200,216,236,.6);
+  box-shadow:0 1px 24px rgba(11,31,82,.06);
+  position:sticky;top:0;z-index:800;
+}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-mark{width:36px;height:36px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:20px;height:20px}
+.logo-txt{font-size:17px;font-weight:800;color:var(--navy)}.logo-txt span{color:var(--org)}
+.nav-sep{width:1px;height:28px;background:var(--bdr);flex-shrink:0}
+.nav-crumb{font-size:13px;color:var(--txt3)}
+.nav-crumb a{color:var(--txt2);transition:color .18s}.nav-crumb a:hover{color:var(--navy)}
+.nav-crumb span{margin:0 6px;color:var(--bdr2)}
+.search-wrap{flex:1;position:relative;max-width:480px;margin-left:auto}
+.search-input{
+  width:100%;border:1.5px solid var(--bdr);background:var(--bg);
+  padding:9px 40px 9px 14px;font-size:14px;color:var(--txt);
+  transition:border-color .18s;
+}
+.search-input:focus{outline:none;border-color:var(--navy)}
+.search-input::placeholder{color:var(--txt3)}
+.search-ico{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--txt3);pointer-events:none}
+.nav-actions{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.btn-cart-n{
+  display:flex;align-items:center;gap:7px;
+  border:1.5px solid var(--bdr2);background:none;color:var(--txt);
+  padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;
+  transition:border-color .18s;white-space:nowrap;
+}
+.btn-cart-n:hover{border-color:var(--navy)}
+.cbadge{background:var(--org);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;font-family:var(--m)}
+.btn-wa-n{
+  display:flex;align-items:center;gap:7px;
+  background:#25D366;color:#fff;border:none;
+  padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;
+  transition:background .18s;
+}
+.btn-wa-n:hover{background:#1CB954}
+.btn-home{
+  display:flex;align-items:center;gap:6px;
+  border:1.5px solid var(--bdr2);background:none;color:var(--txt2);
+  padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;
+  transition:border-color .18s,color .18s;
+}
+.btn-home:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ── PROMO STRIP ── */
+.promo{background:var(--navy);color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:600;letter-spacing:.03em;border-bottom:2px solid var(--org)}
+.promo strong{font-weight:800}
+
+/* ── TRUST BAND ── */
+.trust-band{background:#fff;border-bottom:1px solid var(--bdr);padding:12px 36px}
+.trust-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--txt2);padding:4px 20px;letter-spacing:.01em}
+.trust-item svg{color:var(--org);flex-shrink:0}
+.trust-sep{width:1px;height:20px;background:var(--bdr);flex-shrink:0}
+@media(max-width:900px){.trust-sep:nth-child(8),.trust-sep:nth-child(10){display:none}}
+
+/* ── CATALOG HEADER ── */
+.catalog-hdr{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#0A2A55 100%);
+  border-bottom:1px solid rgba(14,165,233,.2);
+  position:relative;overflow:hidden;
+}
+.catalog-hdr::before{
+  content:'';position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:500px;height:300px;
+  background:radial-gradient(ellipse,rgba(14,165,233,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.catalog-hdr-inner{
+  max-width:var(--max);margin:0 auto;padding:24px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  position:relative;z-index:1;
+}
+.catalog-hdr-left{display:flex;flex-direction:column;gap:4px}
+.catalog-hdr-eyebrow{
+  font-family:var(--m);font-size:10px;letter-spacing:.2em;
+  color:rgba(56,189,248,.7);text-transform:uppercase;margin-bottom:2px;
+}
+.catalog-hdr-title{
+  font-family:var(--d);font-size:clamp(22px,2.4vw,32px);font-weight:700;
+  color:#fff;letter-spacing:-.01em;line-height:1;
+}
+.catalog-hdr-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+.catalog-hdr-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.catalog-stats{display:flex;gap:28px}
+.cstat{text-align:center}
+.cstat-num{font-family:var(--m);font-size:22px;font-weight:700;color:#fff;line-height:1}
+.cstat-num em{color:var(--org2);font-style:normal}
+.cstat-lbl{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+.btn-filter-toggle{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(14,165,233,.15);color:#fff;
+  border:1px solid rgba(14,165,233,.3);
+  padding:10px 20px;font-size:13px;font-weight:600;
+  font-family:var(--f);cursor:pointer;
+  transition:all .2s ease;
+}
+.btn-filter-toggle:hover{background:rgba(14,165,233,.25);border-color:rgba(14,165,233,.5)}
+.btn-filter-toggle.active{background:var(--org);border-color:var(--org)}
+
+/* ── FILTER DRAWER ── */
+.filter-mask{
+  position:fixed;inset:0;background:rgba(0,0,0,.5);
+  z-index:1600;opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.filter-mask.open{opacity:1;pointer-events:all}
+.filter-drw{
+  position:fixed;top:0;left:0;bottom:0;width:300px;
+  background:#fff;border-right:1px solid var(--bdr);
+  z-index:1700;transform:translateX(-100%);
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;
+}
+.filter-drw.open{transform:translateX(0)}
+.filter-drw-head{
+  padding:18px 20px;border-bottom:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--navy);color:#fff;position:sticky;top:0;z-index:1;
+}
+.filter-drw-title{font-family:var(--d);font-size:16px;font-weight:700;letter-spacing:-.01em}
+.filter-drw-close{
+  background:none;border:1.5px solid rgba(255,255,255,.3);color:#fff;
+  width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;transition:border-color .18s;
+}
+.filter-drw-close:hover{border-color:#fff}
+.filter-drw-body{padding:16px}
+.sb-box{background:#fff;border:1px solid var(--bdr);margin-bottom:12px;overflow:hidden}
+.sb-head{
+  padding:11px 16px;border-bottom:1px solid var(--bdr);
+  font-size:10px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--txt3);background:var(--bg);
+}
+.sb-list{list-style:none}
+.sb-list li a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;font-size:13px;color:var(--txt2);
+  border-bottom:1px solid var(--bdr);transition:background .15s,color .15s;
+}
+.sb-list li:last-child a{border-bottom:none}
+.sb-list li a:hover,.sb-list li a.on{background:var(--bg);color:var(--navy);font-weight:600}
+.sb-list li a.on{
+  border-left:3px solid var(--org);
+  background:linear-gradient(90deg,rgba(14,165,233,.08),transparent);
+  color:var(--navy);font-weight:700;
+}
+.sb-count{font-family:var(--m);font-size:10px;color:var(--txt3);background:var(--bg);padding:1px 7px}
+.sb-price label{display:flex;align-items:center;gap:9px;padding:10px 16px;font-size:13px;color:var(--txt2);cursor:pointer;border-bottom:1px solid var(--bdr)}
+.sb-price label:last-child{border-bottom:none}
+.sb-price input[type=checkbox]{width:14px;height:14px;accent-color:var(--org)}
+.sb-price label:hover{background:var(--bg)}
+
+/* ── LAYOUT ── */
+.page{max-width:var(--max);margin:0 auto;padding:28px 40px 80px}
+
+/* ── TOOLBAR ── */
+.toolbar{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 0;margin-bottom:20px;
+  border-bottom:1px solid var(--bdr);
+  flex-wrap:wrap;
+}
+.toolbar-cats{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.chip{
+  padding:7px 16px;border:1.5px solid var(--bdr);
+  font-size:12px;font-weight:600;color:var(--txt2);cursor:pointer;
+  background:#fff;transition:all .18s;letter-spacing:.02em;white-space:nowrap;
+}
+.chip:hover{border-color:var(--org);color:var(--navy);box-shadow:0 2px 8px rgba(14,165,233,.1)}
+.chip.on{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  color:#fff;border-color:transparent;
+  box-shadow:0 3px 14px rgba(4,18,42,.20);
+}
+.toolbar-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.result-info{font-size:13px;color:var(--txt3);white-space:nowrap}
+.result-info strong{color:var(--txt);font-weight:700}
+.sort-sel{
+  border:1.5px solid var(--bdr);background:#fff;padding:8px 12px;
+  font-size:13px;color:var(--txt);cursor:pointer;font-family:var(--f);
+}
+.sort-sel:focus{outline:none;border-color:var(--org)}
+
+/* ── PRODUCT GRID ── */
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1px;
+  background:var(--bdr);
+  border:1px solid var(--bdr);
+}
+
+/* ── PREMIUM PRODUCT CARD ── */
+.pcard{
+  background:#fff;
+  display:flex;flex-direction:column;cursor:pointer;
+  transition:all .25s ease;
+  position:relative;overflow:hidden;
+}
+.pcard::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,rgba(14,165,233,0) 0%,rgba(14,165,233,0.03) 100%);
+  opacity:0;transition:opacity .3s;
+}
+.pcard:hover::before{opacity:1}
+.pcard:hover{
+  z-index:2;
+  box-shadow:0 0 0 2px var(--org),0 16px 48px rgba(14,165,233,.18);
+  transform:scale(1.01);
+}
+.pcard-img{
+  aspect-ratio:1;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;border-bottom:1px solid var(--bdr);
+  padding:20px;
+}
+.pcard-img img{
+  max-width:86%;max-height:86%;object-fit:contain;
+  transition:transform .3s ease;
+  mix-blend-mode:multiply;
+}
+.pcard:hover .pcard-img img{transform:scale(1.08) translateY(-2px)}
+.pcard-img-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 60%,rgba(14,165,233,.05) 0%,transparent 65%);
+  transition:opacity .3s;opacity:0;
+}
+.pcard:hover .pcard-img-bg{opacity:1}
+.pcard-badge{
+  position:absolute;top:0;left:0;
+  background:linear-gradient(135deg,var(--org),var(--navy2));
+  color:#fff;font-size:9px;font-weight:700;letter-spacing:.12em;
+  padding:4px 10px;text-transform:uppercase;font-family:var(--m);
+  z-index:1;
+}
+.pcard-disc{
+  position:absolute;top:0;right:0;
+  background:var(--green);color:#fff;
+  font-size:9px;font-weight:700;font-family:var(--m);
+  padding:4px 10px;z-index:1;
+}
+.pcard-body{padding:16px 18px;flex:1;position:relative;z-index:1}
+.pcard-sku{
+  font-family:var(--m);font-size:9px;color:rgba(14,165,233,.8);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px;
+  display:flex;align-items:center;gap:6px;
+}
+.pcard-sku::before{
+  content:'';display:inline-block;width:16px;height:1px;
+  background:linear-gradient(90deg,var(--org),transparent);flex-shrink:0;
+}
+.pcard-name{
+  font-family:var(--d);font-size:15px;font-weight:700;
+  color:var(--txt);line-height:1.25;margin-bottom:8px;
+}
+.pcard-freq{
+  font-size:11px;color:var(--txt3);line-height:1.4;
+  display:flex;align-items:center;gap:5px;
+}
+.pcard-freq::before{content:'';display:inline-block;width:6px;height:6px;background:var(--org2);flex-shrink:0}
+
+.pcard-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:12px 18px;border-top:1px solid var(--bdr);
+  background:linear-gradient(180deg,var(--bg) 0%,#fff 100%);
+  position:relative;z-index:1;
+}
+.pcard-prices{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pcard-old{font-family:var(--m);font-size:10px;color:var(--txt3);text-decoration:line-through;white-space:nowrap}
+.pcard-price{font-family:var(--m);font-size:19px;font-weight:700;color:var(--navy);white-space:nowrap;letter-spacing:-.01em}
+.pcard-price small{font-size:9px;color:var(--txt3);font-weight:400;margin-right:2px;vertical-align:middle}
+.btn-add-p{
+  background:linear-gradient(135deg,var(--org) 0%,var(--navy2) 100%);
+  color:#fff;border:none;
+  padding:8px 14px;font-size:11px;font-weight:700;
+  cursor:pointer;
+  transition:all .25s ease;
+  letter-spacing:.05em;
+  white-space:nowrap;flex-shrink:0;
+  box-shadow:0 3px 14px rgba(14,165,233,.28);
+}
+.btn-add-p:hover{
+  background:linear-gradient(135deg,var(--org2) 0%,var(--org) 100%);
+  box-shadow:0 6px 24px rgba(14,165,233,.4);
+  transform:translateY(-1px);
+}
+.no-results{
+  grid-column:1/-1;text-align:center;padding:64px 24px;
+  color:var(--txt3);font-size:15px;
+}
+
+/* ── MODAL ── */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(0,0,0,.55);
+  z-index:1800;opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.modal-mask.open{opacity:1;pointer-events:all}
+.modal{
+  position:fixed;top:50%;left:50%;z-index:1900;
+  transform:translate(-50%,-48%);opacity:0;
+  transition:transform .28s,opacity .28s;
+  background:#fff;border:1px solid var(--bdr);
+  width:min(860px,94vw);max-height:88vh;overflow-y:auto;
+}
+.modal-mask.open .modal{transform:translate(-50%,-50%);opacity:1}
+.modal-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.modal-img-col{
+  background:var(--bg);border-right:1px solid var(--bdr);
+  padding:36px;display:flex;align-items:center;justify-content:center;
+  min-height:320px;position:relative;
+}
+.modal-img-col img{max-width:100%;max-height:340px;object-fit:contain}
+.modal-body{padding:32px 28px;display:flex;flex-direction:column;gap:0}
+.modal-sku{font-family:var(--m);font-size:10px;color:var(--txt3);letter-spacing:.2em;margin-bottom:6px}
+.modal-name{font-size:22px;font-weight:800;color:var(--txt);line-height:1.2;margin-bottom:12px}
+.modal-prices{margin-bottom:16px}
+.modal-old{font-family:var(--m);font-size:13px;color:var(--txt3);text-decoration:line-through;margin-bottom:3px}
+.modal-price{font-family:var(--m);font-size:30px;font-weight:700;color:var(--txt);line-height:1}
+.modal-price small{font-size:14px;color:var(--txt3);font-weight:400;margin-right:4px}
+.modal-save{
+  display:inline-block;background:var(--green);color:#fff;
+  font-size:11px;font-weight:700;padding:2px 9px;
+  font-family:var(--m);margin-top:6px;
+}
+.modal-desc{font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:16px;flex:1}
+.modal-specs{border-top:1px solid var(--bdr);padding-top:14px;margin-bottom:20px}
+.modal-spec-row{
+  display:flex;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:12px;
+}
+.modal-spec-row:last-child{border-bottom:none}
+.spec-k{font-weight:600;color:var(--txt2);width:40%;flex-shrink:0}
+.spec-v{color:var(--txt);font-family:var(--m);font-size:11px}
+.modal-qty{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.qty-lbl{font-size:13px;font-weight:600;color:var(--txt2)}
+.qctrl{display:flex;align-items:center;gap:0;border:1.5px solid var(--bdr)}
+.qb2{background:var(--bg);border:none;width:32px;height:32px;font-size:16px;cursor:pointer;transition:background .15s}
+.qb2:hover{background:var(--bdr)}
+.qval{padding:0 14px;font-family:var(--m);font-size:13px;font-weight:700;min-width:40px;text-align:center}
+.modal-actions{display:flex;gap:8px;flex-direction:column}
+.btn-modal-add{
+  width:100%;background:var(--navy);color:#fff;border:none;
+  padding:13px;font-size:14px;font-weight:700;cursor:pointer;
+  transition:background .18s;display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-modal-add:hover{background:var(--blue)}
+.btn-modal-wa{
+  width:100%;background:#25D366;color:#fff;border:none;
+  padding:12px;font-size:14px;font-weight:700;cursor:pointer;
+  transition:background .18s;display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-modal-wa:hover{background:#1CB954}
+.modal-close{
+  position:absolute;top:12px;right:14px;z-index:10;
+  background:none;border:1.5px solid var(--bdr);
+  color:var(--txt);width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;transition:border-color .18s;
+}
+.modal-close:hover{border-color:var(--navy)}
+
+/* ── CART DRAWER ── */
+.cart-mask{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1700;opacity:0;pointer-events:none;transition:opacity .25s}
+.cart-mask.open{opacity:1;pointer-events:all}
+.cart-drw{
+  position:fixed;top:0;right:0;bottom:0;width:400px;
+  background:#fff;border-left:1px solid var(--bdr);z-index:1750;
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;
+}
+.cart-drw.open{transform:translateX(0)}
+.cart-dh{padding:18px 20px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between}
+.cart-dt{font-size:16px;font-weight:800;color:var(--txt)}
+.cart-dx{background:none;border:1.5px solid var(--bdr);color:var(--txt);width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;transition:border-color .18s}
+.cart-dx:hover{border-color:var(--navy)}
+.cart-db{flex:1;overflow-y:auto;padding:10px 14px}
+.cart-empty{text-align:center;padding:56px 16px;color:var(--txt3)}
+.ci3{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--bdr);align-items:flex-start}
+.ci3-img{width:58px;height:58px;background:var(--bg);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.ci3-img img{max-width:90%;max-height:90%;object-fit:contain}
+.ci3-info{flex:1}
+.ci3-nm{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:2px;line-height:1.3}
+.ci3-sk{font-family:var(--m);font-size:9px;color:var(--txt3);margin-bottom:7px}
+.ci3-ctrl{display:flex;align-items:center;gap:6px}
+.qb3{width:22px;height:22px;background:var(--bg);border:1px solid var(--bdr);color:var(--txt);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .18s}
+.qb3:hover{border-color:var(--navy)}
+.qv3{font-family:var(--m);font-size:12px;min-width:18px;text-align:center}
+.ci3-r{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.ci3-rm{background:none;border:none;color:var(--txt3);cursor:pointer;font-size:11px;transition:color .18s}.ci3-rm:hover{color:#E53}
+.ci3-pr{font-family:var(--m);font-size:13px;font-weight:700;color:var(--txt)}
+.cart-df{padding:16px 18px;border-top:1px solid var(--bdr);background:var(--bg)}
+.cart-tot2{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cart-tl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2)}
+.cart-tv{font-family:var(--m);font-size:22px;font-weight:700;color:var(--txt)}
+.btn-ck{
+  width:100%;background:#25D366;color:#fff;border:none;padding:14px;
+  font-size:14px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .18s;
+}
+.btn-ck:hover{background:#1CB954}
+
+/* ── TOAST ── */
+#toast{
+  position:fixed;bottom:28px;left:50%;z-index:9999;
+  transform:translateX(-50%) translateY(10px);
+  background:var(--navy);color:#fff;padding:10px 20px;
+  font-size:13px;font-weight:600;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(0,0,0,.18);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── PAGINATION / FOOTER ── */
+.store-footer{
+  margin-top:40px;padding-top:28px;border-top:1px solid var(--bdr);
+  text-align:center;font-size:13px;color:var(--txt3);
+}
+.store-footer a{color:var(--navy);font-weight:600}
+
+/* ── UTILS ── */
+.hidden{display:none!important}
+
+/* ── SEARCH AUTOCOMPLETE DROPDOWN ── */
+.search-wrap{position:relative;flex:1;max-width:520px;margin-left:auto}
+.search-input{
+  width:100%;border:1.5px solid var(--bdr);background:#fff;
+  padding:10px 44px 10px 16px;font-size:14px;color:var(--txt);
+  font-family:var(--f);
+  transition:border-color .2s,box-shadow .2s;
+}
+.search-input:focus{outline:none;border-color:var(--org);box-shadow:0 0 0 3px rgba(14,165,233,.12)}
+.search-ico{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--txt3);pointer-events:none;transition:opacity .2s}
+.search-ico.hide{opacity:0}
+.search-ico-x{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  color:var(--txt3);cursor:pointer;width:15px;height:15px;
+  display:none;align-items:center;justify-content:center;font-size:14px;
+  background:var(--bg);border:1px solid var(--bdr);
+  font-weight:700;line-height:1;
+}
+.search-ico-x.show{display:flex}
+
+.search-dropdown{
+  position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:950;
+  background:#fff;border:1.5px solid rgba(14,165,233,.35);
+  box-shadow:0 8px 40px rgba(4,18,42,.14);
+  max-height:420px;overflow-y:auto;
+  opacity:0;pointer-events:none;
+  transform:translateY(-6px);
+  transition:opacity .18s ease,transform .18s ease;
+}
+.search-dropdown.open{opacity:1;pointer-events:all;transform:translateY(0)}
+
+.sd-header{
+  padding:8px 14px;border-bottom:1px solid var(--bdr);
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--txt3);background:var(--bg);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.sd-header span{color:var(--org);font-family:var(--m)}
+
+.sd-item{
+  display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;
+  padding:10px 14px;border-bottom:1px solid var(--bdr);
+  cursor:pointer;transition:background .12s;
+  text-decoration:none;color:inherit;
+}
+.sd-item:last-child{border-bottom:none}
+.sd-item:hover{background:rgba(14,165,233,.05)}
+.sd-item.keyboard-active{background:rgba(14,165,233,.08)}
+
+.sd-img{
+  width:44px;height:44px;background:var(--bg);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;
+}
+.sd-img img{max-width:36px;max-height:36px;object-fit:contain}
+.sd-info{min-width:0}
+.sd-sku{font-family:var(--m);font-size:9px;color:var(--txt3);letter-spacing:.16em}
+.sd-name{font-size:13px;font-weight:600;color:var(--txt);line-height:1.3;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sd-cat{font-size:11px;color:var(--txt3);margin-top:1px}
+.sd-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.sd-price{font-family:var(--m);font-size:13px;font-weight:700;color:var(--txt);white-space:nowrap}
+.sd-add{
+  background:linear-gradient(135deg,var(--org),var(--navy2));
+  color:#fff;border:none;padding:5px 10px;
+  font-size:10px;font-weight:700;font-family:var(--f);
+  cursor:pointer;letter-spacing:.04em;
+  transition:opacity .15s;white-space:nowrap;
+}
+.sd-add:hover{opacity:.85}
+
+.sd-empty{padding:24px;text-align:center;color:var(--txt3);font-size:13px}
+.sd-footer{
+  padding:8px 14px;border-top:1px solid var(--bdr);background:var(--bg);
+  font-size:11px;color:var(--txt3);display:flex;justify-content:space-between;
+}
+.sd-footer kbd{
+  background:#fff;border:1px solid var(--bdr);padding:1px 6px;
+  font-size:10px;font-family:var(--m);color:var(--txt2);
+}
+
+/* ── QTY IN CARD ── */
+.qty-add-wrap{display:flex;align-items:center;gap:6px}
+.qac-ctrl{display:flex;align-items:center;border:1.5px solid var(--bdr);height:32px}
+.qac-btn{
+  width:26px;height:100%;background:var(--bg);border:none;
+  font-size:15px;font-weight:700;color:var(--txt2);
+  cursor:pointer;transition:background .15s,color .15s;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.qac-btn:hover{background:var(--org);color:#fff}
+.qac-inp{
+  width:36px;height:100%;border:none;border-left:1px solid var(--bdr);border-right:1px solid var(--bdr);
+  text-align:center;font-family:var(--m);font-size:12px;font-weight:700;color:var(--txt);
+  background:#fff;
+}
+.qac-inp:focus{outline:none}
+/* remove number input spinners */
+.qac-inp::-webkit-outer-spin-button,.qac-inp::-webkit-inner-spin-button{-webkit-appearance:none}
+.qac-inp[type=number]{-moz-appearance:textfield}
+
+/* ── STICKY CART BAR ── */
+.sticky-cart{
+  position:fixed;bottom:0;left:0;right:0;z-index:1500;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border-top:2px solid var(--org);
+  padding:0;
+  transform:translateY(100%);
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+}
+.sticky-cart.show{transform:translateY(0);pointer-events:all}
+.sticky-cart-inner{
+  max-width:var(--max);margin:0 auto;padding:0 32px;
+  height:52px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.sc-info{display:flex;align-items:center;gap:16px}
+.sc-badge{
+  background:var(--org);color:#fff;font-family:var(--m);
+  font-size:11px;font-weight:700;padding:3px 10px;
+}
+.sc-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.sc-total{font-family:var(--m);font-size:18px;font-weight:700;color:#fff}
+.sc-actions{display:flex;gap:10px;align-items:center}
+.sc-open{
+  background:none;border:1.5px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.8);padding:7px 16px;font-size:12px;font-weight:600;
+  font-family:var(--f);cursor:pointer;transition:border-color .18s,color .18s;
+}
+.sc-open:hover{border-color:#fff;color:#fff}
+.sc-wa{
+  display:flex;align-items:center;gap:7px;
+  background:#25D366;color:#fff;border:none;
+  padding:8px 18px;font-size:13px;font-weight:700;
+  font-family:var(--f);cursor:pointer;transition:background .18s;
+}
+.sc-wa:hover{background:#1CB954}
+
+/* ── TIENDA MODERN UPGRADES ── */
+.promo{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,var(--navy) 100%);
+  border-bottom:2px solid var(--org);
+  position:relative;overflow:hidden;
+}
+.promo::before{
+  content:'';position:absolute;
+  width:400px;height:100px;top:50%;left:30%;transform:translateY(-50%);
+  background:radial-gradient(ellipse,rgba(14,165,233,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.trust-band{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--bdr);
+}
+.trust-item{
+  position:relative;
+}
+.trust-item svg{color:var(--org2)}
+
+.chip.on{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border-color:transparent;
+  box-shadow:0 3px 14px rgba(4,18,42,.20);
+}
+.chip:hover{border-color:var(--org);color:var(--navy);box-shadow:0 2px 8px rgba(14,165,233,.12)}
+
+.sb-list li a.on{
+  border-left:3px solid var(--org);
+  background:linear-gradient(90deg,rgba(14,165,233,.08) 0%,transparent 100%);
+  color:var(--navy);font-weight:700;
+}
+
+.modal-name{font-family:var(--d)}
+.modal-price{color:var(--navy);text-shadow:none}
+
+::-webkit-scrollbar-thumb{background:var(--org)}
+
+/* page bg handled in main .page rule */
+
+.sb-box{
+  transition:box-shadow .2s;
+}
+.sb-box:hover{box-shadow:0 4px 20px rgba(14,165,233,.08)}
+
+.pcard-name{font-family:var(--d);font-size:13px}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span>📍 Curití, Santander — Colombia &nbsp;·&nbsp; <a href="tel:+573167760692">(+57) 316 776 0692</a></span>
+    <div class="tb-r">
+      <a href="mailto:ventas@industriasmaral.com">ventas@industriasmaral.com</a>
+      <a href="index.html">Inicio</a>
+      <a href="#">Garantía</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 22 24" fill="none">
+          <rect x="10" y="1" width="2" height="22" fill="white"/>
+          <rect x="4" y="7" width="14" height="1.8" fill="white"/>
+          <rect x="6" y="11" width="10" height="1.8" fill="white"/>
+          <rect x="8" y="15" width="6" height="1.8" fill="white"/>
+          <circle cx="11" cy="2" r="1.5" fill="#0EA5E9"/>
+        </svg>
+      </div>
+      <span class="logo-txt">MARAL<span>.</span></span>
+    </a>
+    <div class="nav-sep"></div>
+    <div class="nav-crumb">
+      <a href="index.html">Inicio</a><span>›</span><strong>Tienda</strong>
+    </div>
+
+    <div class="search-wrap" id="search-wrap">
+      <input class="search-input" id="search-input" type="text" placeholder="Buscar por referencia, nombre, frecuencia…" autocomplete="off">
+      <svg class="search-ico" id="search-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <div class="search-ico-x" id="search-clear">✕</div>
+      <div class="search-dropdown" id="search-dropdown"></div>
+    </div>
+
+    <div class="nav-actions">
+      <a href="index.html" class="btn-home">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Sitio web
+      </a>
+      <button class="btn-cart-n" id="cart-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Carrito <span class="cbadge" id="cart-cnt">0</span>
+      </button>
+      <button class="btn-wa-n" id="wa-float">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedir por WhatsApp
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PROMO -->
+<div class="promo">🚚 <strong>Envíos a todo Colombia</strong> — Despachos desde Curití, Santander · Pago contra entrega disponible</div>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <span>Garantía 12 meses</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      <span>Stock disponible</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <span>Soporte técnico directo</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      <span>Fabricación nacional</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>+20 años de experiencia</span>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOG HEADER -->
+<div class="catalog-hdr">
+  <div class="catalog-hdr-inner">
+    <div class="catalog-hdr-left">
+      <div class="catalog-hdr-eyebrow">Industrias Maral · Fábrica de Antenas · Curití, Santander</div>
+      <div class="catalog-hdr-title">Catálogo de Radiocomunicación</div>
+      <div class="catalog-hdr-sub">Antenas VHF/UHF · Líneas MAXANT y ALMOTCOM · Precios de fábrica</div>
+    </div>
+    <div class="catalog-hdr-right">
+      <div class="catalog-stats">
+        <div class="cstat"><div class="cstat-num" id="stat-total">36</div><div class="cstat-lbl">Productos</div></div>
+        <div class="cstat"><div class="cstat-num"><em>20</em>+</div><div class="cstat-lbl">Años exp.</div></div>
+        <div class="cstat"><div class="cstat-num"><em>32</em></div><div class="cstat-lbl">Deptos.</div></div>
+      </div>
+      <button class="btn-filter-toggle" id="filter-toggle">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        Filtros avanzados
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER DRAWER -->
+<div class="filter-mask" id="filter-mask"></div>
+<div class="filter-drw" id="filter-drw">
+  <div class="filter-drw-head">
+    <span class="filter-drw-title">Filtrar productos</span>
+    <button class="filter-drw-close" id="filter-close">✕</button>
+  </div>
+  <div class="filter-drw-body">
+    <div class="sb-box">
+      <div class="sb-head">Categoría</div>
+      <ul class="sb-list" id="sidebar-cats">
+        <li><a href="#" class="on" data-cat="all">Todos los productos <span class="sb-count" id="cnt-all"></span></a></li>
+        <li><a href="#" data-cat="estacion-base">Estación Base <span class="sb-count" id="cnt-estacion-base"></span></a></li>
+        <li><a href="#" data-cat="antena-vhf">Antenas VHF Móvil <span class="sb-count" id="cnt-antena-vhf"></span></a></li>
+        <li><a href="#" data-cat="antena-uhf">Antenas UHF Móvil <span class="sb-count" id="cnt-antena-uhf"></span></a></li>
+        <li><a href="#" data-cat="otras-bandas">Otras Bandas <span class="sb-count" id="cnt-otras-bandas"></span></a></li>
+        <li><a href="#" data-cat="base-perforar">Bases de Perforar <span class="sb-count" id="cnt-base-perforar"></span></a></li>
+        <li><a href="#" data-cat="base-pestana">Bases de Pestaña <span class="sb-count" id="cnt-base-pestana"></span></a></li>
+        <li><a href="#" data-cat="kit">Kits / Combos <span class="sb-count" id="cnt-kit"></span></a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-head">Marca</div>
+      <ul class="sb-list">
+        <li><a href="#" onclick="filterBrand('all');return false">Todas las marcas</a></li>
+        <li><a href="#" onclick="filterBrand('MAXANT');return false">MAXANT</a></li>
+        <li><a href="#" onclick="filterBrand('ALMOTCOM');return false">ALMOTCOM</a></li>
+        <li><a href="#" onclick="filterBrand('ANTENEX');return false">Tipo ANTENEX</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-head">Rango de precio</div>
+      <div class="sb-price" id="price-filters">
+        <label><input type="checkbox" data-max="50000"> Hasta $50.000</label>
+        <label><input type="checkbox" data-min="50000" data-max="100000"> $50.000 – $100.000</label>
+        <label><input type="checkbox" data-min="100000" data-max="200000"> $100.000 – $200.000</label>
+        <label><input type="checkbox" data-min="200000"> Más de $200.000</label>
+      </div>
+    </div>
+    <div class="sb-box">
+      <div class="sb-head">¿Necesita asesoría?</div>
+      <div style="padding:14px 16px">
+        <p style="font-size:12px;color:var(--txt2);line-height:1.6;margin-bottom:12px">Nuestros técnicos le ayudan a elegir la antena correcta para su proyecto.</p>
+        <a href="https://wa.me/573167760692?text=Hola,%20necesito%20asesor%C3%ADa%20para%20elegir%20una%20antena." target="_blank" style="display:flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:9px 12px;font-size:13px;font-weight:700" onmouseover="this.style.background='#1CB954'" onmouseout="this.style.background='#25D366'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Hablar con un técnico
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+  <div class="toolbar">
+    <div class="toolbar-cats" id="cat-chips"></div>
+    <div class="toolbar-right">
+      <div class="result-info">Mostrando <strong id="showing-count">36</strong> productos</div>
+      <select class="sort-sel" id="sort-sel">
+        <option value="default">Relevancia</option>
+        <option value="price-asc">Precio ↑</option>
+        <option value="price-desc">Precio ↓</option>
+        <option value="name-asc">A–Z</option>
+        <option value="name-desc">Z–A</option>
+      </select>
+    </div>
+  </div>
+  <div class="prod-grid" id="prod-grid"></div>
+  <div class="store-footer">
+    <p>Industrias Maral S.A.S · Curití, Santander · <a href="mailto:ventas@industriasmaral.com">ventas@industriasmaral.com</a> · (+57) 316 776 0692</p>
+    <p style="margin-top:6px">Precios en COP · IVA no incluido · Sujetos a cambio sin previo aviso</p>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="modal-mask" id="modal-mask">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="modal-inner">
+      <div class="modal-img-col">
+        <img id="modal-img" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <div class="modal-sku" id="modal-sku"></div>
+        <div class="modal-name" id="modal-name"></div>
+        <div class="modal-prices">
+          <div class="modal-old" id="modal-old"></div>
+          <div class="modal-price"><small>COP</small><span id="modal-price"></span></div>
+          <div class="modal-save" id="modal-save"></div>
+        </div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <div class="modal-specs" id="modal-specs"></div>
+        <div class="modal-qty">
+          <span class="qty-lbl">Cantidad:</span>
+          <div class="qctrl">
+            <button class="qb2" id="qty-down">−</button>
+            <span class="qval" id="qty-val">1</span>
+            <button class="qb2" id="qty-up">+</button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-modal-add" id="modal-add">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Agregar al carrito
+          </button>
+          <button class="btn-modal-wa" id="modal-wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pedir este producto por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="cart-mask" id="cart-mask"></div>
+<div class="cart-drw" id="cart-drw">
+  <div class="cart-dh">
+    <span class="cart-dt">Tu carrito</span>
+    <button class="cart-dx" id="cart-close">✕</button>
+  </div>
+  <div class="cart-db" id="cart-db"></div>
+  <div class="cart-df" id="cart-df" style="display:none">
+    <div class="cart-tot2">
+      <span class="cart-tl">Total</span>
+      <span class="cart-tv" id="cart-total">$0 COP</span>
+    </div>
+    <button class="btn-ck" id="btn-checkout">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Pagar por WhatsApp
+    </button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   CATÁLOGO REAL — INDUSTRIAS MARAL (fuente: WooCommerce CSV export)
+   Imágenes: ./img/ (enhanced) con fallback a industriasmaral.com
+============================================================ */
+const IMG = './img/';
+const IMG_FALLBACK = 'https://industriasmaral.com/wp-content/uploads/2023/03/';
+
+const PRODUCTS = [
+  /* ── ANTENAS VHF ── */
+  {
+    id:'101', sku:'REF-101', name:'Antena 1/4 de Onda VHF',
+    cat:'antena-vhf', brand:'MAXANT',
+    price:37536, sale:28704,
+    freq:'136–174 MHz', gain:'0 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Chrome nut',
+    img: IMG+'101.png',
+    desc:'Antena de cuarto de onda en varilla de acero inoxidable. Construcción robusta con tuerca cromada de lujo. Ideal para instalaciones básicas VHF.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','0 dBi (Unity)'],['Potencia máx.','150W'],['VSWR','1:1.5 o menor'],['Impedancia','50Ω'],['Material','Acero inoxidable']]
+  },
+  {
+    id:'101-1', sku:'REF-101-UHF', name:'Antena 1/4 de Onda UHF',
+    cat:'antena-uhf', brand:'MAXANT',
+    price:37536, sale:28704,
+    freq:'430–512 MHz', gain:'0 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Chrome nut',
+    img: IMG+'101-1.png',
+    desc:'Antena de cuarto de onda para banda UHF. Varilla de acero inoxidable con tuerca de lujo cromada. Solución económica y confiable.',
+    specs:[['Frecuencia','430–512 MHz'],['Ganancia','0 dBi'],['Potencia máx.','150W'],['VSWR','1:1.5 o menor'],['Impedancia','50Ω'],['Material','Acero inoxidable']]
+  },
+  {
+    id:'103', sku:'REF-103', name:'Antena Tipo MAXRAD VHF 5/8 — 3 dB',
+    cat:'antena-vhf', brand:'MAXANT',
+    price:116518, sale:89102, badge:'MAXANT',
+    freq:'136–174 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Flange spring',
+    img: IMG+'103.png',
+    desc:'Antena omnidireccional de alta ganancia tipo MAXRAD. Plástico ABS con conectores bronce-latón cromados. Bobina esmaltada y varilla de acero inoxidable de 52 pulgadas.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','3 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5 o menor'],['Impedancia','50Ω'],['Longitud varilla','52 pulgadas'],['Material cuerpo','Plástico ABS + bronce-latón']]
+  },
+  {
+    id:'103-3', sku:'REF-103-3', name:'Antena MAXRAD Antirobo VHF 5/8 — 3 dB',
+    cat:'antena-vhf', brand:'MAXANT',
+    price:157000, sale:120105,
+    freq:'136–174 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Spring contact',
+    img: IMG+'103-3.png',
+    desc:'Antena VHF antirobo con sistema de contacto por resorte especial. Plástico negro de ingeniería, tuercas cromadas y bobina especial de alambre con esmalte.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','3 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Sistema contacto','Resorte especial antirrobo'],['Material','Plástico negro ingeniería']]
+  },
+  {
+    id:'104', sku:'REF-104', name:'Antena MAXRAD VHF 5/8 3dB de Caña',
+    cat:'antena-vhf', brand:'MAXANT',
+    price:218960, sale:167440, badge:'PREMIUM',
+    freq:'136–174 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Flange contact',
+    img: IMG+'104.png',
+    desc:'Antena VHF de alta calidad con caña de acero inoxidable y excelente resorte de memoria. Condensadores integrados en la bobina. 8 MHz de ancho de banda.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','3 dBi'],['Ancho de banda','8 MHz'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Construcción','Caña tubular inoxidable'],['Resorte','Memoria de alta durabilidad']]
+  },
+  {
+    id:'106', sku:'REF-106', name:'Antena Tipo ANTENEX VHF 5/8 — 3 dB',
+    cat:'antena-vhf', brand:'ANTENEX',
+    price:116518, sale:89102,
+    freq:'136–174 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Spring contact',
+    img: IMG+'106.png',
+    desc:'Antena VHF tipo ANTENEX con plástico negro de ingeniería y bobina esmaltada. Varilla de acero inoxidable de 52 pulgadas con contacto por resorte.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','3 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Longitud varilla','52 pulgadas']]
+  },
+  {
+    id:'119', sku:'REF-119', name:'Antena 5/8 VHF Banda Marina',
+    cat:'antena-vhf', brand:'MAXANT',
+    price:150472, sale:115067,
+    freq:'136–174 MHz (Marina)', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Soldered contact',
+    img: IMG+'119.png',
+    desc:'Antena para banda marina VHF con plástico blanco de ingeniería resistente a UV y salinidad. Varilla de acero inoxidable de 55 pulgadas con contacto soldado.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','3 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Color','Blanco UV'],['Longitud','55 pulgadas']]
+  },
+  /* ── ANTENAS UHF ── */
+  {
+    id:'111', sku:'REF-111', name:'Antena Tipo MAXRAD UHF 5/8 — 3 dB',
+    cat:'antena-uhf', brand:'MAXANT',
+    price:95404, sale:72956,
+    freq:'430–512 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Spring contact',
+    img: IMG+'111.png',
+    desc:'Antena UHF omnidireccional tipo MAXRAD. Plástico negro de ingeniería, bobina esmaltada. Varilla de acero inoxidable de 14 pulgadas con contacto por resorte.',
+    specs:[['Frecuencia','430–512 MHz'],['Ganancia','3 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Longitud varilla','14 pulgadas']]
+  },
+  {
+    id:'108', sku:'REF-108', name:'Antena Tipo ANTENEX UHF 7/8 — 5 dB',
+    cat:'antena-uhf', brand:'ANTENEX',
+    price:116518, sale:89102, badge:'5 dBi',
+    freq:'430–512 MHz', gain:'5 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Spring contact',
+    img: IMG+'108.png',
+    desc:'Antena UHF de alta ganancia tipo ANTENEX con bobina integrada en la varilla para mejor rendimiento. 5 dBi de ganancia real medida.',
+    specs:[['Frecuencia','430–512 MHz'],['Ganancia','5 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Diseño','Bobina en varilla']]
+  },
+  {
+    id:'107', sku:'REF-107', name:'Antena MAXRAD de Caña UHF 7/8 — 5 dB',
+    cat:'antena-uhf', brand:'MAXANT',
+    price:218960, sale:167440, badge:'PREMIUM',
+    freq:'430–512 MHz', gain:'3 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Flange contact',
+    img: IMG+'107.png',
+    desc:'Antena UHF de caña de acero inoxidable con excelente resorte de memoria. Bobina integrada en la varilla, condensadores especiales. 8 MHz de ancho de banda.',
+    specs:[['Frecuencia','430–512 MHz'],['Ganancia','3 dBi'],['Ancho de banda','8 MHz'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Sistema contacto','Flange']]
+  },
+  {
+    id:'105', sku:'REF-105', name:'Antena Tipo MAXRAD UHF 7/8 — 5 dB',
+    cat:'antena-uhf', brand:'MAXANT',
+    price:116518, sale:89102, badge:'5 dBi',
+    freq:'430–512 MHz', gain:'5 dBi', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Flange contact',
+    img: IMG+'105.png',
+    desc:'Antena UHF plástico ABS con tuercas cromadas y bobina de bronce. Varilla de alambre de acero inoxidable templado. Sistema de contacto flange. 5/8 de longitud de onda.',
+    specs:[['Frecuencia','430–512 MHz'],['Ganancia','5 dBi'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Polarización','Vertical'],['Longitud onda','5/8λ']]
+  },
+  /* ── OTRAS BANDAS ── */
+  {
+    id:'109', sku:'REF-109', name:'Antena Banda Baja 27–33 MHz',
+    cat:'otras-bandas', brand:'MAXANT',
+    price:257278, sale:196742,
+    freq:'27–33 MHz', gain:'—', power:'200W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Flange contact',
+    img: IMG+'109.png',
+    desc:'Antena para frecuencias de banda baja 27-33 MHz. Plástico negro de ingeniería, tuercas cromadas y bobina esmaltada. Varilla de acero inoxidable de 52 pulgadas.',
+    specs:[['Frecuencia','27–33 MHz'],['Potencia máx.','200W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Longitud','52 pulgadas']]
+  },
+  {
+    id:'110', sku:'REF-110', name:'Antena Banda Aérea / Extensor 118–136 MHz',
+    cat:'otras-bandas', brand:'MAXANT',
+    price:181815, sale:139035,
+    freq:'118–136 MHz', gain:'3 dBi', power:'200W', vswr:'—', imp:'50Ω',
+    connector:'Spring contact',
+    img: IMG+'110.png',
+    desc:'Antena para banda aérea civil 118-136 MHz con plástico negro de ingeniería. Bobina esmaltada con excelente resorte de memoria. Varilla de 61 pulgadas. 5 MHz de ancho de banda.',
+    specs:[['Frecuencia','118–136 MHz'],['Ganancia','3 dBi'],['Ancho de banda','5 MHz'],['Potencia máx.','200W'],['Impedancia','50Ω'],['Longitud','61 pulgadas']]
+  },
+  {
+    id:'117', sku:'REF-117', name:'Antena 800 MHz',
+    cat:'otras-bandas', brand:'MAXANT',
+    price:60860, sale:46540,
+    freq:'806–870 MHz', gain:'3 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'Chrome nut',
+    img: IMG+'117.png',
+    desc:'Antena de cuarto de onda para banda 800 MHz. Varilla de acero inoxidable con tuerca cromada de lujo. 3 dBi de ganancia.',
+    specs:[['Frecuencia','806–870 MHz'],['Ganancia','3 dBi'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω']]
+  },
+  /* ── BASES DE PERFORAR ── */
+  {
+    id:'201', sku:'REF-201', name:'Base de Perforar 3/8"',
+    cat:'base-perforar', brand:'MARAL',
+    price:26393, sale:20183,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'201.png',
+    desc:'Base hexagonal de bronce-latón 1/2" para perforación. Placa de acero inoxidable, aislador de Teflón, longitud 12mm. Incluye O-ring de hermeticidad. Peso aprox. 37g.',
+    specs:[['Hilo','3/8" (hembra)'],['Base','Hexagonal bronce-latón 1/2"'],['Placa','Acero inoxidable'],['Aislador','Teflón'],['Longitud','12mm'],['Incluye','O-ring'],['Peso','~37g']]
+  },
+  {
+    id:'203', sku:'REF-203', name:'Base de Perforar 3/4"',
+    cat:'base-perforar', brand:'MARAL',
+    price:31482, sale:24075,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/4" thread',
+    img: IMG+'203.png',
+    desc:'Base roscada de bronce-latón 1 1/8" para perforación de 3/4". Aislador de Teflón, longitud 12mm. Incluye O-ring. Apta para mayor espesor de carrocería.',
+    specs:[['Hilo','3/4"'],['Tuerca','1 1/8" bronce-latón'],['Aislador','Teflón'],['Longitud','12mm'],['Incluye','O-ring'],['Peso','~40g']]
+  },
+  {
+    id:'205', sku:'REF-205', name:'Base de Perforar 3/8" × 15mm',
+    cat:'base-perforar', brand:'MARAL',
+    price:31476, sale:24070,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'205.png',
+    desc:'Base de perforar especial para carrocerías más gruesas (15mm). Compatible con base ref. 302. Tuerca bronce-latón 1 1/8", Teflón. Incluye O-ring.',
+    specs:[['Hilo','3/8"'],['Longitud especial','15mm'],['Compatible con','Ref. 302'],['Tuerca','1 1/8" bronce-latón'],['Aislador','Teflón'],['Incluye','O-ring']]
+  },
+  {
+    id:'206', sku:'REF-206', name:'Base de Perforar Araña 3/8"',
+    cat:'base-perforar', brand:'MARAL',
+    price:65482, sale:50075,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'206.png',
+    desc:'Base araña con placa galvanizada para reforzar el techo del vehículo. Perforación 3/8", tuerca bronce-latón 1 1/8", Teflón. Ideal para vehículos de techo delgado.',
+    specs:[['Hilo','3/8"'],['Tuerca','1 1/8" bronce-latón'],['Placa refuerzo','Galvanizada'],['Aislador','Teflón'],['Longitud','12mm'],['Incluye','O-ring']]
+  },
+  {
+    id:'207', sku:'REF-207', name:'Base de Perforar Tipo PL',
+    cat:'base-perforar', brand:'MARAL',
+    price:50182, sale:38375,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'PL-259',
+    img: IMG+'207.png',
+    desc:'Base de perforar con conector tipo PL (SO-239 hembra). Hexagonal bronce-latón 1/2", placa de acero inoxidable, Teflón, longitud 19mm. Peso aprox. 54g.',
+    specs:[['Hilo','3/8"'],['Conector','PL-259 / SO-239 hembra'],['Base','Hexagonal 1/2" bronce-latón'],['Placa','Acero inoxidable'],['Longitud','19mm'],['Peso','~54g']]
+  },
+  /* ── BASES DE PESTAÑA ── */
+  {
+    id:'301', sku:'REF-301', name:'Base de Pestaña Cromada',
+    cat:'base-pestana', brand:'MARAL',
+    price:48680, sale:37226,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" + 1 1/8" thread',
+    img: IMG+'301.png',
+    desc:'Base de pestaña de acabado cromado de lujo. Placa y tornillos de acero inoxidable, hilo 1 1/8", aislador Teflón con empaque impermeabilizante. Instalación en maletero o capó.',
+    specs:[['Hilo antena','1 1/8" cromado'],['Placa','Acero inoxidable'],['Tornillos','Acero inoxidable'],['Aislador','Teflón'],['Empaque','Impermeabilizante'],['Instalación','Maletero / capó']]
+  },
+  {
+    id:'301-3', sku:'REF-301-3', name:'Base de Pestaña Cromada ATOS',
+    cat:'base-pestana', brand:'MARAL',
+    price:55461, sale:42411,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" + 1 1/8" thread',
+    img: IMG+'301-3.png',
+    desc:'Base de pestaña ATOS con placa de acero inoxidable calibre 14. Tornillos inoxidables, acabado cromado de lujo, hilo 1 1/8", Teflón y empaques impermeabilizantes.',
+    specs:[['Placa','Acero inoxidable cal. 14'],['Tornillos','Inoxidable'],['Acabado','Cromado lujo'],['Hilo','1 1/8"'],['Aislador','Teflón'],['Empaques','Impermeabilizante']]
+  },
+  {
+    id:'302', sku:'REF-302', name:'Base de Pestaña Uña Plástica',
+    cat:'base-pestana', brand:'MARAL',
+    price:48680, sale:37226,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'302.png',
+    desc:'Base de pestaña con uña de plástico negro de ingeniería. Placa y tornillos inoxidables, hilo bronce-latón 1 1/8", Teflón. Para instalación en maletero o capó.',
+    specs:[['Placa','Acero inoxidable'],['Uña','Plástico negro ingeniería'],['Tornillos','Inoxidable'],['Hilo','1 1/8" bronce-latón'],['Aislador','Teflón']]
+  },
+  {
+    id:'305', sku:'REF-305', name:'Base de L',
+    cat:'base-pestana', brand:'MARAL',
+    price:53176, sale:40664,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'305.png',
+    desc:'Base tipo L para instalación en laterales del vehículo. Placa y tornillos de acero inoxidable, acabado cromado, hilo 1 1/8", Teflón y empaques impermeabilizantes.',
+    specs:[['Tipo','Base L (lateral)'],['Placa','Acero inoxidable'],['Acabado','Cromado lujo'],['Hilo','1 1/8"'],['Aislador','Teflón']]
+  },
+  {
+    id:'307', sku:'REF-307', name:'Base Magnética',
+    cat:'base-pestana', brand:'MARAL',
+    price:95209, sale:72807, badge:'POPULAR',
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'3/8" thread',
+    img: IMG+'307.png',
+    desc:'Base magnética de alta adherencia con imán importado de agarre superior. Acabado cromado, hilo 1 1/8", Teflón. Se instala en el centro del techo sin perforación.',
+    specs:[['Imán','Importado alta adherencia'],['Acabado','Cromado lujo'],['Hilo','1 1/8"'],['Tornillos','Inoxidable'],['Aislador','Teflón'],['Instalación','Centro del techo']]
+  },
+  {
+    id:'308', sku:'REF-308', name:'Base de Pestaña Tipo PL',
+    cat:'base-pestana', brand:'MARAL',
+    price:62261, sale:47611,
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'PL-259 (SO-239)',
+    img: IMG+'308.png',
+    desc:'Base de pestaña con conector tipo PL (SO-239). Placa cal. 14 inoxidable, tornillos inox, cromado de lujo, Teflón, hilo 16mm, longitud 22mm, contacto por resorte.',
+    specs:[['Placa','Inoxidable cal. 14'],['Conector','PL-259 / SO-239'],['Hilo','16mm'],['Longitud','22mm'],['Contacto','Resorte']]
+  },
+  {
+    id:'315-PL', sku:'REF-315-PL', name:'Base con Radiales PL',
+    cat:'base-pestana', brand:'MARAL',
+    price:130594, sale:99866, badge:'COMPLETA',
+    freq:'—', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'PL-259 (SO-239)',
+    img: IMG+'315-PL.png',
+    desc:'Base completa con radiales de acero inoxidable (55cm), placa aluminio y abrazadera galvanizada. Conector PL-259 hembra (SO-239). Solución completa de puesta a tierra.',
+    specs:[['Radiales','55cm acero inoxidable'],['Placa','Aluminio'],['Abrazadera','Galvanizada'],['Conector','SO-239 (PL-259 hembra)'],['Aislador','Teflón cromado lujo']]
+  },
+  /* ── ESTACIÓN BASE ── */
+  {
+    id:'MR801', sku:'MR-801', name:'Antena G-6 Omni. VHF 137–174 MHz',
+    cat:'estacion-base', brand:'ALMOTCOM', badge:'ALMOTCOM',
+    price:380000, sale:null,
+    freq:'137–174 MHz', gain:'6 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr801.svg',
+    desc:'Antena omnidireccional de ganancia G-6 para estaciones base VHF. Línea ALMOTCOM. Fabricada en aluminio de grado industrial, apta para instalaciones permanentes en exteriores bajo cualquier clima de Colombia.',
+    specs:[['Frecuencia','137–174 MHz'],['Ganancia','6 dBi'],['Tipo','Omnidireccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Conector','N hembra'],['Uso','Estación base / repetidor']]
+  },
+  {
+    id:'MR801B', sku:'MR-801B', name:'Antena G-6 Omni. VHF (137–162)/(162–174) MHz',
+    cat:'estacion-base', brand:'ALMOTCOM',
+    price:385000, sale:null,
+    freq:'137–174 MHz (doble rango)', gain:'6 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr801b.svg',
+    desc:'Antena omnidireccional G-6 doble rango VHF. Cubre los dos sub-rangos de 137–162 MHz y 162–174 MHz. Ideal para sistemas con frecuencias en ambas sub-bandas.',
+    specs:[['Frecuencia','137–162 / 162–174 MHz'],['Ganancia','6 dBi'],['Tipo','Omnidireccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Conector','N hembra']]
+  },
+  {
+    id:'MR802', sku:'MR-802', name:'Antena G-7 Omni. UHF 430–470 MHz',
+    cat:'estacion-base', brand:'ALMOTCOM', badge:'ALMOTCOM',
+    price:410000, sale:null,
+    freq:'430–470 MHz', gain:'7 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr802.svg',
+    desc:'Antena omnidireccional G-7 para estaciones base UHF. La mayor ganancia de la línea omnidireccional ALMOTCOM. Para repetidores y redes fijas UHF de largo alcance.',
+    specs:[['Frecuencia','430–470 MHz'],['Ganancia','7 dBi'],['Tipo','Omnidireccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Conector','N hembra'],['Uso','Repetidor / estación base']]
+  },
+  {
+    id:'MR803', sku:'MR-803', name:'Antena G-6 Omni. VHF Aérea 118–136 MHz',
+    cat:'estacion-base', brand:'ALMOTCOM',
+    price:390000, sale:null,
+    freq:'118–136 MHz', gain:'6 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr803.svg',
+    desc:'Antena omnidireccional G-6 para la banda aérea civil 118–136 MHz. Línea ALMOTCOM para aeropuertos, helipuertos y pistas de aviación en Colombia.',
+    specs:[['Frecuencia','118–136 MHz'],['Ganancia','6 dBi'],['Tipo','Omnidireccional'],['Banda','Aérea civil'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω']]
+  },
+  {
+    id:'MR805', sku:'MR-805', name:'Antena G-3 Omni. VHF 137–174 MHz',
+    cat:'estacion-base', brand:'ALMOTCOM',
+    price:280000, sale:null,
+    freq:'137–174 MHz', gain:'3 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr805.svg',
+    desc:'Antena omnidireccional compacta G-3 para estaciones base VHF. Versión de menor ganancia de la línea ALMOTCOM. Ideal para instalaciones donde el tamaño es prioritario.',
+    specs:[['Frecuencia','137–174 MHz'],['Ganancia','3 dBi'],['Tipo','Omnidireccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Impedancia','50Ω'],['Conector','N hembra']]
+  },
+  {
+    id:'MR415', sku:'MR-415', name:'Antena Yagi VHF 1 Dipolo 136–174 MHz Telescópica',
+    cat:'estacion-base', brand:'MAXANT',
+    price:220000, sale:null,
+    freq:'136–174 MHz', gain:'2 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr415.svg',
+    desc:'Antena Yagi de un dipolo telescópica VHF. Línea MAXANT para uso en estaciones base con bajo perfil. Fabricada en aluminio, ajustable a la frecuencia de operación.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','2 dBi'],['Elementos','1 dipolo'],['Tipo','Telescópica'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Material','Aluminio']]
+  },
+  {
+    id:'MR416', sku:'MR-416', name:'Antena Yagi 5 Elementos Telescópica VHF',
+    cat:'estacion-base', brand:'MAXANT', badge:'MAXANT',
+    price:450000, sale:null,
+    freq:'136–174 MHz', gain:'9 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr416.svg',
+    desc:'Antena Yagi MAXANT de 5 elementos telescópica para VHF. Alta ganancia para enlaces punto a punto y cobertura dirigida. Ajustable para optimizar en campo.',
+    specs:[['Frecuencia','136–174 MHz'],['Ganancia','9 dBi'],['Elementos','5'],['Tipo','Direccional telescópica'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Material','Aluminio']]
+  },
+  {
+    id:'MR4302', sku:'MR-430-2', name:'Antena Yagi 3 Elementos UHF',
+    cat:'estacion-base', brand:'MAXANT',
+    price:380000, sale:null,
+    freq:'400–470 MHz', gain:'7 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr430-2.svg',
+    desc:'Antena Yagi MAXANT de 3 elementos para UHF. Ideal para repetidores y enlaces UHF direccionales de corto-medio alcance. Construcción en aluminio de grado industrial.',
+    specs:[['Frecuencia','400–470 MHz'],['Ganancia','7 dBi'],['Elementos','3'],['Tipo','Direccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Material','Aluminio']]
+  },
+  {
+    id:'MR430', sku:'MR-430', name:'Antena Yagi Direccional 7 Elementos UHF',
+    cat:'estacion-base', brand:'MAXANT', badge:'MAXANT',
+    price:580000, sale:null,
+    freq:'400–470 MHz', gain:'10 dBi', power:'150W', vswr:'1:1.5', imp:'50Ω',
+    connector:'N hembra',
+    img: IMG+'mr430.svg',
+    desc:'Antena Yagi MAXANT de alta ganancia con 7 elementos para UHF. La solución más potente para enlaces punto a punto y extensión de cobertura UHF. Fabricada en Curití, Santander.',
+    specs:[['Frecuencia','400–470 MHz'],['Ganancia','10 dBi'],['Elementos','7'],['Tipo','Direccional'],['Potencia máx.','150W'],['VSWR','1:1.5'],['Material','Aluminio']]
+  },
+  /* ── KITS ── */
+  {
+    id:'K-301A', sku:'KIT-301A', name:'Kit: Base Cromada + Cable + Miniu',
+    cat:'kit', brand:'MARAL',
+    price:98600, sale:75400, badge:'KIT',
+    freq:'136–174 / 430–512 MHz', gain:'—', power:'—', vswr:'—', imp:'50Ω',
+    connector:'Incluido',
+    img: IMG+'301.png',
+    desc:'Kit completo: Base de pestaña cromada (ref. 301) + cable coaxial + mini-conector. Todo lo necesario para instalar su antena vehicular de manera profesional.',
+    specs:[['Incluye','Base pestaña cromada REF-301'],['Incluye','Cable coaxial'],['Incluye','Mini-conector'],['Uso','Instalación vehicular completa']]
+  },
+];
+
+/* ── STATE ── */
+let activeCat = 'all';
+let activeBrand = 'all';
+let activeSort = 'default';
+let searchQ = '';
+let activePriceFilters = [];
+let modalQty = 1;
+let modalProduct = null;
+let cart = JSON.parse(localStorage.getItem('maral_tienda_cart') || '[]');
+
+/* ── FILTER & SORT ── */
+function getFiltered() {
+  let list = [...PRODUCTS];
+  if (activeCat !== 'all') list = list.filter(p => p.cat === activeCat);
+  if (activeBrand !== 'all') list = list.filter(p => p.brand === activeBrand);
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    list = list.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.sku.toLowerCase().includes(q) ||
+      p.freq.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q)
+    );
+  }
+  if (activePriceFilters.length) {
+    list = list.filter(p => activePriceFilters.some(f => {
+      const pr = p.sale || p.price;
+      if (f.max && !f.min) return pr <= f.max;
+      if (f.min && !f.max) return pr >= f.min;
+      return pr >= f.min && pr <= f.max;
+    }));
+  }
+  if (activeSort === 'price-asc')  list.sort((a,b) => (a.sale||a.price) - (b.sale||b.price));
+  if (activeSort === 'price-desc') list.sort((a,b) => (b.sale||b.price) - (a.sale||a.price));
+  if (activeSort === 'name-asc')   list.sort((a,b) => a.name.localeCompare(b.name));
+  if (activeSort === 'name-desc')  list.sort((a,b) => b.name.localeCompare(a.name));
+  return list;
+}
+
+function cop(n) { return n.toLocaleString('es-CO'); }
+
+function discPct(p) {
+  if (!p.sale || p.sale >= p.price) return 0;
+  return Math.round((1 - p.sale / p.price) * 100);
+}
+
+/* ── RENDER PRODUCTS ── */
+function render() {
+  const list = getFiltered();
+  const grid = document.getElementById('prod-grid');
+  document.getElementById('showing-count').textContent = list.length;
+
+  if (!list.length) {
+    grid.innerHTML = '<div class="no-results">No se encontraron productos con esos criterios.</div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(p => {
+    const disc = discPct(p);
+    return `
+    <div class="pcard" onclick="openModal('${p.id}')">
+      <div class="pcard-img">
+        <div class="pcard-img-bg"></div>
+        ${p.badge ? `<div class="pcard-badge">${p.badge}</div>` : ''}
+        ${disc ? `<div class="pcard-disc">-${disc}%</div>` : ''}
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://industriasmaral.com/wp-content/uploads/2023/03/'+this.src.split('/').pop()}else{this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23f0f2f8%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2230%22>📡</text></svg>'}">
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-sku">${p.sku}</div>
+        <div class="pcard-name">${p.name}</div>
+        <div class="pcard-freq">${p.freq !== '—' ? p.freq : p.cat.includes('base') ? 'Base / Accesorio' : ''}</div>
+      </div>
+      <div class="pcard-foot">
+        <div class="pcard-prices">
+          ${p.sale && p.sale < p.price ? `<div class="pcard-old">$${cop(p.price)}</div>` : ''}
+          <div class="pcard-price"><small>COP</small>$${cop(p.sale || p.price)}</div>
+        </div>
+        <div class="qty-add-wrap" onclick="event.stopPropagation()">
+          <div class="qac-ctrl">
+            <button class="qac-btn" onclick="adjQty('${p.id}',-1)">−</button>
+            <input class="qac-inp" id="qi-${p.id}" type="number" value="1" min="1" max="99">
+            <button class="qac-btn" onclick="adjQty('${p.id}',1)">+</button>
+          </div>
+          <button class="btn-add-p" onclick="addFromCard('${p.id}')">Agregar</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── CATEGORY COUNTS ── */
+function updateCounts() {
+  const cats = ['all','estacion-base','antena-vhf','antena-uhf','otras-bandas','base-perforar','base-pestana','kit'];
+  cats.forEach(c => {
+    const el = document.getElementById('cnt-'+c);
+    if (el) el.textContent = c === 'all' ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === c).length;
+  });
+}
+
+/* ── CHIPS ── */
+function buildChips() {
+  const chips = [
+    {label:'Todos', cat:'all'},
+    {label:'Estación Base', cat:'estacion-base'},
+    {label:'VHF Móvil', cat:'antena-vhf'},
+    {label:'UHF Móvil', cat:'antena-uhf'},
+    {label:'Otras Bandas', cat:'otras-bandas'},
+    {label:'Bases Perforar', cat:'base-perforar'},
+    {label:'Bases Pestaña', cat:'base-pestana'},
+    {label:'Kits', cat:'kit'},
+  ];
+  document.getElementById('cat-chips').innerHTML = chips.map(c =>
+    `<button class="chip${activeCat===c.cat?' on':''}" onclick="setCat('${c.cat}')">${c.label}</button>`
+  ).join('');
+}
+
+function setCat(cat) {
+  activeCat = cat;
+  buildChips();
+  // sync sidebar
+  document.querySelectorAll('#sidebar-cats a').forEach(a => {
+    a.classList.toggle('on', a.dataset.cat === cat);
+  });
+  render();
+}
+
+window.filterBrand = function(b) { activeBrand = b; render(); };
+
+/* ── SIDEBAR CAT LINKS ── */
+document.querySelectorAll('#sidebar-cats a').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); setCat(a.dataset.cat); });
+});
+
+/* ── SORT ── */
+document.getElementById('sort-sel').addEventListener('change', e => {
+  activeSort = e.target.value;
+  render();
+});
+
+/* search handled by autocomplete block below */
+
+/* ── PRICE FILTER ── */
+document.querySelectorAll('#price-filters input').forEach(cb => {
+  cb.addEventListener('change', () => {
+    activePriceFilters = Array.from(document.querySelectorAll('#price-filters input:checked')).map(c => ({
+      min: c.dataset.min ? +c.dataset.min : null,
+      max: c.dataset.max ? +c.dataset.max : null,
+    }));
+    render();
+  });
+});
+
+/* ── MODAL ── */
+window.openModal = function(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  modalProduct = p;
+  modalQty = 1;
+  document.getElementById('modal-sku').textContent = p.sku;
+  document.getElementById('modal-name').textContent = p.name;
+  document.getElementById('modal-img').src = p.img;
+  document.getElementById('modal-img').alt = p.name;
+  document.getElementById('modal-img').dataset.fb = '';
+  document.getElementById('modal-img').onerror = function(){
+    if(!this.dataset.fb){
+      this.dataset.fb=1;
+      this.src='https://industriasmaral.com/wp-content/uploads/2023/03/'+this.src.split('/').pop();
+    } else {
+      this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect fill=%22%23f0f2f8%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2260%22>📡</text></svg>';
+    }
+  };
+  const disc = discPct(p);
+  const oldEl = document.getElementById('modal-old');
+  if (p.sale && p.sale < p.price) {
+    oldEl.textContent = '$' + cop(p.price) + ' COP';
+    oldEl.style.display = 'block';
+  } else {
+    oldEl.style.display = 'none';
+  }
+  document.getElementById('modal-price').textContent = '$' + cop(p.sale || p.price);
+  const saveEl = document.getElementById('modal-save');
+  if (disc > 0) {
+    saveEl.textContent = 'Ahorras ' + disc + '% — $' + cop(p.price - p.sale) + ' COP';
+    saveEl.style.display = 'inline-block';
+  } else {
+    saveEl.style.display = 'none';
+  }
+  document.getElementById('modal-desc').textContent = p.desc;
+  document.getElementById('modal-specs').innerHTML = p.specs.map(([k,v]) =>
+    `<div class="modal-spec-row"><span class="spec-k">${k}</span><span class="spec-v">${v}</span></div>`
+  ).join('');
+  document.getElementById('qty-val').textContent = '1';
+  document.getElementById('modal-mask').classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+
+function closeModal() {
+  document.getElementById('modal-mask').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-mask').addEventListener('click', e => { if(e.target === e.currentTarget) closeModal(); });
+
+document.getElementById('qty-down').addEventListener('click', () => {
+  if (modalQty > 1) { modalQty--; document.getElementById('qty-val').textContent = modalQty; }
+});
+document.getElementById('qty-up').addEventListener('click', () => {
+  modalQty++;
+  document.getElementById('qty-val').textContent = modalQty;
+});
+
+document.getElementById('modal-add').addEventListener('click', () => {
+  if (modalProduct) { addToCart(modalProduct.id, modalQty); closeModal(); }
+});
+
+document.getElementById('modal-wa').addEventListener('click', () => {
+  if (!modalProduct) return;
+  const p = modalProduct;
+  const msg = `Hola! Estoy interesado en:\n\n*${p.name}* (${p.sku})\nPrecio: $${cop(p.sale||p.price)} COP\nCantidad: ${modalQty}\n\n¿Tiene disponibilidad?`;
+  window.open(`https://wa.me/573167760692?text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+/* ── CART ── */
+function saveCart() { localStorage.setItem('maral_tienda_cart', JSON.stringify(cart)); }
+function updateBadge() {
+  document.getElementById('cart-cnt').textContent = cart.reduce((s,i) => s+i.qty, 0);
+  if (typeof updateStickyCart === 'function') updateStickyCart();
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+window.addToCart = function(id, qty=1) {
+  const p = PRODUCTS.find(x => x.id === id); if (!p) return;
+  const ex = cart.find(x => x.id === id);
+  if (ex) ex.qty += qty; else cart.push({id, qty});
+  saveCart(); updateBadge(); renderCart();
+  showToast(`${p.name} agregado ✓`);
+};
+
+window.rmCart = function(id) { cart = cart.filter(x => x.id !== id); saveCart(); updateBadge(); renderCart(); };
+window.chgCart = function(id, d) {
+  const it = cart.find(x => x.id === id); if (!it) return;
+  it.qty = Math.max(1, it.qty + d); saveCart(); renderCart();
+};
+
+function renderCart() {
+  const db = document.getElementById('cart-db');
+  const df = document.getElementById('cart-df');
+  if (!cart.length) {
+    db.innerHTML = '<div class="cart-empty"><div style="font-size:36px;opacity:.3;margin-bottom:12px">📡</div><div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">Tu carrito está vacío</div></div>';
+    df.style.display = 'none'; return;
+  }
+  df.style.display = 'block';
+  let total = 0;
+  db.innerHTML = cart.map(item => {
+    const p = PRODUCTS.find(x => x.id === item.id); if (!p) return '';
+    const pr = p.sale || p.price;
+    total += pr * item.qty;
+    return `<div class="ci3">
+      <div class="ci3-img"><img src="${p.img}" alt="${p.name}" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://industriasmaral.com/wp-content/uploads/2023/03/'+this.src.split('/').pop()}else{this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect fill=%22%23f0f2f8%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2226%22>📡</text></svg>'}"></div>
+      <div class="ci3-info">
+        <div class="ci3-nm">${p.name}</div>
+        <div class="ci3-sk">${p.sku}</div>
+        <div class="ci3-ctrl">
+          <button class="qb3" onclick="chgCart('${p.id}',-1)">−</button>
+          <span class="qv3">${item.qty}</span>
+          <button class="qb3" onclick="chgCart('${p.id}',1)">+</button>
+        </div>
+      </div>
+      <div class="ci3-r">
+        <button class="ci3-rm" onclick="rmCart('${p.id}')">✕</button>
+        <div class="ci3-pr">$${cop(pr * item.qty)}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('cart-total').textContent = '$' + cop(total) + ' COP';
+}
+
+const cartDrw  = document.getElementById('cart-drw');
+const cartMask = document.getElementById('cart-mask');
+function openCart()  { cartDrw.classList.add('open'); cartMask.classList.add('open'); renderCart(); }
+function closeCart() { cartDrw.classList.remove('open'); cartMask.classList.remove('open'); }
+document.getElementById('cart-btn').addEventListener('click', openCart);
+document.getElementById('cart-close').addEventListener('click', closeCart);
+cartMask.addEventListener('click', closeCart);
+
+document.getElementById('btn-checkout').addEventListener('click', () => {
+  if (!cart.length) return;
+  let msg = '🛒 *Pedido — Industrias Maral*\n\n';
+  let total = 0;
+  cart.forEach(item => {
+    const p = PRODUCTS.find(x => x.id === item.id); if (!p) return;
+    const pr = p.sale || p.price;
+    msg += `• *${p.name}* (${p.sku})\n  ${item.qty} und × $${cop(pr)} COP = $${cop(pr*item.qty)} COP\n\n`;
+    total += pr * item.qty;
+  });
+  msg += `*TOTAL: $${cop(total)} COP*\n\n_¿Me puede indicar cómo proceder con el pago y envío?_`;
+  window.open(`https://wa.me/573167760692?text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+document.getElementById('wa-float').addEventListener('click', () => {
+  window.open('https://wa.me/573167760692?text=Hola,%20estoy%20en%20la%20tienda%20de%20Maral%20y%20quisiera%20hacer%20un%20pedido.', '_blank');
+});
+
+/* ── INIT ── */
+updateCounts();
+buildChips();
+
+/* apply ?cat= URL param on load */
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if(cat){
+    /* map URL params from index.html to tienda categories */
+    const map = {
+      vhf:'antena-vhf', uhf:'antena-uhf', kit:'kit',
+      estacion:'estacion-base', yagi:'estacion-base', panel:'estacion-base',
+      maxant:'estacion-base', almotcom:'antena-vhf', '700':'otras-bandas'
+    };
+    const resolved = map[cat] || cat;
+    setCat(resolved);
+  }
+})();
+
+render();
+updateBadge();
+
+/* ── QTY HELPERS IN CARD ── */
+function adjQty(id, delta) {
+  const inp = document.getElementById('qi-' + id);
+  if (!inp) return;
+  const v = Math.max(1, Math.min(99, (parseInt(inp.value) || 1) + delta));
+  inp.value = v;
+}
+function addFromCard(id) {
+  const inp = document.getElementById('qi-' + id);
+  const qty = inp ? Math.max(1, parseInt(inp.value) || 1) : 1;
+  addToCart(id, qty);
+  if (inp) inp.value = 1;
+}
+
+/* ── STICKY CART BAR ── */
+function updateStickyCart() {
+  const bar = document.getElementById('sticky-bar');
+  if (!cart.length) { bar.classList.remove('show'); return; }
+  let total = 0, items = 0;
+  cart.forEach(item => {
+    const p = PRODUCTS.find(x => x.id === item.id);
+    if (p) { total += (p.sale || p.price) * item.qty; items += item.qty; }
+  });
+  document.getElementById('sc-badge-cnt').textContent = items + (items === 1 ? ' producto' : ' productos');
+  document.getElementById('sc-total-val').textContent = '$' + cop(total) + ' COP';
+  bar.classList.add('show');
+}
+
+/* ── SEARCH AUTOCOMPLETE ── */
+(function() {
+  const inp    = document.getElementById('search-input');
+  const drop   = document.getElementById('search-dropdown');
+  const ico    = document.getElementById('search-ico');
+  const clrBtn = document.getElementById('search-clear');
+  let debounce;
+  let kbIndex  = -1;
+
+  function cop2(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+  function catLabel(cat) {
+    const map = { 'estacion-base':'Estación Base', 'antena-vhf':'VHF Móvil',
+      'antena-uhf':'UHF Móvil', 'otras-bandas':'Otras Bandas',
+      'base-perforar':'Base Perforar', 'base-pestana':'Base Pestaña', 'kit':'Kit/Combo' };
+    return map[cat] || cat;
+  }
+
+  function showDrop(q) {
+    const norm = q.toLowerCase().trim();
+    const hits = PRODUCTS.filter(p =>
+      p.name.toLowerCase().includes(norm) ||
+      p.sku.toLowerCase().includes(norm) ||
+      (p.freq && p.freq.toLowerCase().includes(norm)) ||
+      (p.brand && p.brand.toLowerCase().includes(norm)) ||
+      catLabel(p.cat).toLowerCase().includes(norm)
+    ).slice(0, 7);
+
+    if (!norm) { drop.classList.remove('open'); return; }
+
+    if (!hits.length) {
+      drop.innerHTML = `
+        <div class="sd-header"><span>Sin resultados para "${q}"</span></div>
+        <div class="sd-empty">Intenta con el código (ej. MR-801), frecuencia (ej. VHF) o nombre del producto.</div>`;
+      drop.classList.add('open'); kbIndex = -1; return;
+    }
+
+    const hl = (txt) => txt.replace(new RegExp('(' + norm.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'),
+      '<mark style="background:rgba(14,165,233,.18);color:var(--navy)">$1</mark>');
+
+    drop.innerHTML = `
+      <div class="sd-header">
+        <span>Resultados para "<em>${q}</em>"</span>
+        <span>${hits.length} encontrado${hits.length>1?'s':''}</span>
+      </div>
+      ${hits.map(p => `
+        <div class="sd-item" data-id="${p.id}">
+          <div class="sd-img">
+            <img src="${p.img}" alt="${p.name}" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://industriasmaral.com/wp-content/uploads/2023/03/'+this.src.split('/').pop()}else{this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect fill=%22%23f0f2f8%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>📡</text></svg>'}" loading="lazy">
+          </div>
+          <div class="sd-info">
+            <div class="sd-sku">${p.sku}</div>
+            <div class="sd-name">${hl(p.name)}</div>
+            <div class="sd-cat">${catLabel(p.cat)}${p.freq && p.freq !== '—' ? ' · ' + p.freq : ''}</div>
+          </div>
+          <div class="sd-right">
+            <div class="sd-price">$${cop2(p.sale || p.price)}</div>
+            <button class="sd-add" data-id="${p.id}">+ Agregar</button>
+          </div>
+        </div>`).join('')}
+      <div class="sd-footer">
+        <span><kbd>↑↓</kbd> navegar · <kbd>Enter</kbd> agregar al carrito</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+      </div>`;
+    drop.classList.add('open'); kbIndex = -1;
+  }
+
+  function hideDrop() { drop.classList.remove('open'); kbIndex = -1; }
+
+  function getItems() { return drop.querySelectorAll('.sd-item'); }
+  function setKb(i) {
+    getItems().forEach((el,idx) => el.classList.toggle('keyboard-active', idx === i));
+    kbIndex = i;
+  }
+
+  inp.addEventListener('input', () => {
+    const q = inp.value;
+    ico.classList.toggle('hide', q.length > 0);
+    clrBtn.classList.toggle('show', q.length > 0);
+    clearTimeout(debounce);
+    debounce = setTimeout(() => showDrop(q), 160);
+    // also filter grid in real-time (existing behaviour)
+    searchQ = q.toLowerCase().trim();
+    render();
+  });
+
+  inp.addEventListener('focus', () => { if (inp.value) showDrop(inp.value); });
+
+  inp.addEventListener('keydown', e => {
+    const items = getItems();
+    if (e.key === 'ArrowDown') { e.preventDefault(); setKb(Math.min(kbIndex+1, items.length-1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setKb(Math.max(kbIndex-1, 0)); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (kbIndex >= 0 && items[kbIndex]) {
+        const id = items[kbIndex].dataset.id;
+        addToCart(id, 1);
+        items[kbIndex].style.background = 'rgba(14,165,233,.12)';
+        setTimeout(() => { if(items[kbIndex]) items[kbIndex].style.background = ''; }, 400);
+      } else { hideDrop(); }
+    }
+    else if (e.key === 'Escape') { hideDrop(); inp.blur(); }
+  });
+
+  clrBtn.addEventListener('click', () => {
+    inp.value = ''; hideDrop();
+    ico.classList.remove('hide'); clrBtn.classList.remove('show');
+    searchQ = ''; render();
+    inp.focus();
+  });
+
+  // click on dropdown item
+  drop.addEventListener('click', e => {
+    const addBtn = e.target.closest('.sd-add');
+    const item   = e.target.closest('.sd-item');
+    if (addBtn) {
+      e.stopPropagation();
+      addToCart(addBtn.dataset.id, 1);
+      addBtn.textContent = '✓ Agregado';
+      setTimeout(() => { addBtn.textContent = '+ Agregar'; }, 1200);
+      return;
+    }
+    if (item) { openModal(item.dataset.id); hideDrop(); }
+  });
+
+  // close on outside click
+  document.addEventListener('click', e => {
+    if (!document.getElementById('search-wrap').contains(e.target)) hideDrop();
+  });
+})();
+
+/* ── STICKY BAR BUTTONS ── */
+document.getElementById('sc-open-cart').addEventListener('click', openCart);
+document.getElementById('sc-wa-btn').addEventListener('click', () => {
+  document.getElementById('btn-checkout').click();
+});
+
+/* ── FILTER DRAWER ── */
+const filterDrw  = document.getElementById('filter-drw');
+const filterMask = document.getElementById('filter-mask');
+const filterToggle = document.getElementById('filter-toggle');
+function openFilter()  { filterDrw.classList.add('open'); filterMask.classList.add('open'); filterToggle.classList.add('active'); }
+function closeFilter() { filterDrw.classList.remove('open'); filterMask.classList.remove('open'); filterToggle.classList.remove('active'); }
+filterToggle.addEventListener('click', () => filterDrw.classList.contains('open') ? closeFilter() : openFilter());
+document.getElementById('filter-close').addEventListener('click', closeFilter);
+filterMask.addEventListener('click', closeFilter);
+
+/* update header stat on render */
+const origRender = render;
+window.render = function() {
+  origRender();
+  const el = document.getElementById('stat-total');
+  if (el) el.textContent = document.getElementById('showing-count').textContent;
+};
+
+</script>
+
+<!-- STICKY CART BAR -->
+<div class="sticky-cart" id="sticky-bar">
+  <div class="sticky-cart-inner">
+    <div class="sc-info">
+      <div class="sc-badge" id="sc-badge-cnt">0 productos</div>
+      <span class="sc-label">en tu pedido</span>
+      <span class="sc-total" id="sc-total-val">$0 COP</span>
+    </div>
+    <div class="sc-actions">
+      <button class="sc-open" id="sc-open-cart">Ver detalle</button>
+      <button class="sc-wa" id="sc-wa-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedir por WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
