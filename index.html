@@ -1596,9 +1596,9 @@ const cartDrawer=document.getElementById('cart-drawer');
 const cartMask=document.getElementById('cart-mask');
 function openCart(){cartDrawer.classList.add('open');cartMask.classList.add('open');renderCart()}
 function closeCart(){cartDrawer.classList.remove('open');cartMask.classList.remove('open')}
-document.getElementById('cart-btn').addEventListener('click',openCart);
-document.getElementById('cart-close').addEventListener('click',closeCart);
-cartMask.addEventListener('click',closeCart);
+document.getElementById('cart-btn')?.addEventListener('click',openCart);
+document.getElementById('cart-close')?.addEventListener('click',closeCart);
+cartMask?.addEventListener('click',closeCart);
 
 document.getElementById('btn-checkout').addEventListener('click',()=>{
   if(!cart.length)return;
