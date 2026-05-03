@@ -1545,7 +1545,7 @@ document.querySelectorAll('.ftab').forEach(btn=>{
 /* ─── CART ─── */
 let cart = JSON.parse(localStorage.getItem('maral_cart2')||'[]');
 function saveCart(){localStorage.setItem('maral_cart2',JSON.stringify(cart))}
-function updateBadge(){document.getElementById('cart-cnt').textContent=cart.reduce((s,i)=>s+i.qty,0)}
+function updateBadge(){const el=document.getElementById('cart-cnt');if(el)el.textContent=cart.reduce((s,i)=>s+i.qty,0)}
 function showToast(msg){
   const t=document.getElementById('toast');
   t.textContent=msg;t.classList.add('show');
@@ -1600,7 +1600,7 @@ document.getElementById('cart-btn')?.addEventListener('click',openCart);
 document.getElementById('cart-close')?.addEventListener('click',closeCart);
 cartMask?.addEventListener('click',closeCart);
 
-document.getElementById('btn-checkout').addEventListener('click',()=>{
+document.getElementById('btn-checkout')?.addEventListener('click',()=>{
   if(!cart.length)return;
   let msg='🛒 *Pedido — Industrias Maral*\n\n';
   let total=0;
@@ -1613,7 +1613,7 @@ document.getElementById('btn-checkout').addEventListener('click',()=>{
   window.open(`https://wa.me/573167760692?text=${encodeURIComponent(msg)}`,'_blank');
 });
 
-document.getElementById('wa-cta').addEventListener('click',()=>{
+document.getElementById('wa-cta')?.addEventListener('click',()=>{
   window.open(`https://wa.me/573167760692?text=${encodeURIComponent('Hola, me interesa recibir información sobre las antenas de Industrias Maral.')}`,'_blank');
 });
 
