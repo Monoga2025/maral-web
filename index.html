@@ -28,6 +28,12 @@
   /* legacy aliases */
   --orange: var(--sky);
   --orange2:var(--sky2);
+  /* tienda aliases */
+  --org:var(--sky);--org2:var(--sky2);
+  --txt:var(--text);--txt2:var(--text2);--txt3:var(--text3);
+  --bdr:var(--border);--bdr2:var(--border2);
+  --f:var(--font);--d:var(--display);--m:var(--mono);
+  --green:#059669;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow-x:hidden;font-size:15px;}
@@ -266,66 +272,34 @@ img{display:block;max-width:100%}
 
 /* ── PRODUCTOS DESTACADOS ── */
 #productos{background:var(--bg)}
-.section-header{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  margin-bottom:40px;
-}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
 .filter-tabs{display:flex;gap:4px;border-bottom:2px solid var(--border)}
-.ftab{
-  padding:10px 18px;font-size:13px;font-weight:600;color:var(--text3);
-  background:none;border:none;cursor:pointer;transition:color .18s;
-  position:relative;bottom:-2px;border-bottom:2px solid transparent;
-}
+.ftab{padding:10px 18px;font-size:13px;font-weight:600;color:var(--text3);background:none;border:none;cursor:pointer;transition:color .18s;position:relative;bottom:-2px;border-bottom:2px solid transparent}
 .ftab.on{color:var(--navy);border-bottom-color:var(--navy)}
 .ftab:hover{color:var(--navy)}
-.prod-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
-}
-.prod-card{
-  background:#fff;border:1px solid var(--border);
-  transition:border-color .25s,box-shadow .25s,transform .25s;cursor:pointer;
-  display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
-}
-.prod-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--sky),var(--sky2));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .3s ease;z-index:1;
-}
-.prod-card:hover::after{transform:scaleX(1)}
-.prod-card:hover{border-color:rgba(14,165,233,.4);box-shadow:0 8px 40px rgba(14,165,233,.12);transform:translateY(-2px)}
-.prod-img-wrap{
-  aspect-ratio:1;background:var(--bg);
-  display:flex;align-items:center;justify-content:center;position:relative;
-  border-bottom:1px solid var(--border);
-}
-.prod-badge2{
-  position:absolute;top:0;left:0;
-  background:var(--orange);color:#fff;
-  font-size:9px;font-weight:700;letter-spacing:.1em;
-  padding:4px 8px;text-transform:uppercase;font-family:var(--mono);
-}
-.prod-body2{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:6px}
-.prod-sku2{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:.18em}
-.prod-name2{font-size:13px;font-weight:700;color:var(--text);line-height:1.3}
-.prod-spec2{font-size:11px;color:var(--text3);line-height:1.4;flex:1}
-.prod-footer2{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 16px;border-top:1px solid var(--border);
-  background:var(--bg);
-}
-.prod-price2{
-  font-family:var(--mono);font-size:16px;font-weight:700;color:var(--text);
-}
-.prod-price2 small{font-size:10px;color:var(--text3);margin-right:2px;font-weight:400}
-.btn-add2{
-  background:var(--navy);color:#fff;border:none;
-  padding:6px 12px;font-size:11px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
-  font-family:var(--font);transition:background .18s;
-}
-.btn-add2:hover{background:var(--blue)}
+/* ── PRODUCT GRID (idéntico a tienda) ── */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--bdr);border:1px solid var(--bdr)}
+.pcard{background:#fff;display:flex;flex-direction:column;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(14,165,233,0) 0%,rgba(14,165,233,0.03) 100%);opacity:0;transition:opacity .3s}
+.pcard:hover::before{opacity:1}
+.pcard:hover{z-index:2;box-shadow:0 0 0 2px var(--org),0 16px 48px rgba(14,165,233,.18);transform:scale(1.01)}
+.pcard-img{aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border-bottom:1px solid var(--bdr);padding:20px}
+.pcard-img img{max-width:86%;max-height:86%;object-fit:contain;transition:transform .3s ease;mix-blend-mode:multiply}
+.pcard:hover .pcard-img img{transform:scale(1.08) translateY(-2px)}
+.pcard-img-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(14,165,233,.05) 0%,transparent 65%);transition:opacity .3s;opacity:0}
+.pcard:hover .pcard-img-bg{opacity:1}
+.pcard-badge{position:absolute;top:0;left:0;background:linear-gradient(135deg,var(--org),var(--navy2));color:#fff;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;text-transform:uppercase;font-family:var(--m);z-index:1}
+.pcard-disc{position:absolute;top:0;right:0;background:var(--green);color:#fff;font-size:9px;font-weight:700;font-family:var(--m);padding:4px 10px;z-index:1}
+.pcard-body{padding:16px 18px;flex:1;position:relative;z-index:1}
+.pcard-sku{font-family:var(--m);font-size:9px;color:rgba(14,165,233,.8);letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.pcard-sku::before{content:'';display:inline-block;width:16px;height:1px;background:linear-gradient(90deg,var(--org),transparent);flex-shrink:0}
+.pcard-name{font-family:var(--d);font-size:15px;font-weight:700;color:var(--txt);line-height:1.25;margin-bottom:8px}
+.pcard-freq{font-size:11px;color:var(--txt3);line-height:1.4;display:flex;align-items:center;gap:5px}
+.pcard-freq::before{content:'';display:inline-block;width:6px;height:6px;background:var(--org2);flex-shrink:0}
+.pcard-price-inline{margin-bottom:8px;display:flex;align-items:baseline;gap:0}
+.pcard-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:12px 18px;border-top:1px solid var(--bdr);background:linear-gradient(180deg,var(--bg) 0%,#fff 100%);position:relative;z-index:1}
+.btn-add-p{background:linear-gradient(135deg,var(--org) 0%,var(--navy2) 100%);color:#fff;border:none;padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer;transition:all .25s ease;letter-spacing:.05em;white-space:nowrap;flex-shrink:0;box-shadow:0 3px 14px rgba(14,165,233,.28)}
+.btn-add-p:hover{background:linear-gradient(135deg,var(--org2) 0%,var(--org) 100%);box-shadow:0 6px 24px rgba(14,165,233,.4);transform:translateY(-1px)}
 
 /* ── SOLUCIONES ── */
 #soluciones{background:#fff}
@@ -987,9 +961,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
     </div>
     <div class="filter-tabs rv d1" style="margin-bottom:28px">
       <button class="ftab on" data-f="all">Todos</button>
-      <button class="ftab" data-f="vhf">VHF</button>
-      <button class="ftab" data-f="uhf">UHF</button>
-      <button class="ftab" data-f="700">700/800 MHz</button>
+      <button class="ftab" data-f="vhf">VHF Móvil</button>
+      <button class="ftab" data-f="uhf">UHF Móvil</button>
+      <button class="ftab" data-f="base">Estación Base</button>
+      <button class="ftab" data-f="acc">Bases y Accesorios</button>
       <button class="ftab" data-f="kit">Kits</button>
     </div>
     <div class="prod-grid rv d2" id="prod-grid"></div>
@@ -1241,21 +1216,49 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script>
-/* ─── DATA ─── */
-const PRODUCTS = [
-  {id:1, name:"Antena G-6 Omni. VHF 137–174 MHz",       sku:"MR-801",     gain:"6 dBi",  freq:"137–174 MHz", price:280000,  cat:"vhf", badge:"DESTACADO",  spec:"Omnidireccional · Estación base · ALMOTCOM"},
-  {id:2, name:"Antena G-7 Omni. UHF 430–470 MHz",       sku:"MR-802",     gain:"7 dBi",  freq:"430–470 MHz", price:310000,  cat:"uhf", badge:null,         spec:"Omnidireccional · Estación base · Aluminio"},
-  {id:3, name:"Antena G-6 Omni. VHF Aérea 118–136 MHz", sku:"MR-803",     gain:"6 dBi",  freq:"118–136 MHz", price:295000,  cat:"vhf", badge:null,         spec:"Banda aérea · Omnidireccional · N hembra"},
-  {id:4, name:"Antena G-3 Omni. VHF 137–174 MHz",       sku:"MR-805",     gain:"3 dBi",  freq:"137–174 MHz", price:190000,  cat:"vhf", badge:null,         spec:"Omnidireccional · Compacta · Base estación"},
-  {id:5, name:"Antena Yagi Direccional 7 Elem. UHF",    sku:"MR-430",     gain:"10 dBi", freq:"400–470 MHz", price:490000,  cat:"uhf", badge:"PROFESIONAL", spec:"7 elementos · Direccional · MAXANT"},
-  {id:6, name:"Antena Yagi 5 Elementos Telescópica VHF",sku:"MR-416",     gain:"9 dBi",  freq:"136–174 MHz", price:420000,  cat:"vhf", badge:"DESTACADO",   spec:"5 elementos · Telescópica · Aluminio"},
-  {id:7, name:"Antena Yagi 3 Elementos UHF",            sku:"MR-430-2",   gain:"7 dBi",  freq:"400–470 MHz", price:320000,  cat:"uhf", badge:null,         spec:"3 elementos · Direccional · Aluminio"},
-  {id:8, name:"Antena Yagi VHF 1 Dipolo Telescópica",   sku:"MR-415",     gain:"2 dBi",  freq:"136–174 MHz", price:155000,  cat:"vhf", badge:"ALMOTCOM",    spec:"1 dipolo · Telescópica · 136–174 MHz"},
-  {id:9, name:"Kit 5/8 VHF 106 + Base Uña Cromada 301", sku:"K-24",       gain:"3 dBi",  freq:"136–174 MHz", price:148000,  cat:"kit", badge:"KIT MÓVIL",   spec:"Antena + base cromada · Vehículo · VHF"},
-  {id:10,name:"Kit 1/4 Onda VHF 101 + Base Perforar 201",sku:"K-25B",     gain:"0 dBi",  freq:"136–174 MHz", price:95000,   cat:"kit", badge:null,         spec:"Antena + base perforar · Instalación fija"},
-  {id:11,name:"Kit 7/8 UHF 105 + Base Uña Cromada 301", sku:"K-28",       gain:"5 dBi",  freq:"400–470 MHz", price:168000,  cat:"kit", badge:"KIT MÓVIL",   spec:"Antena UHF + base cromada · Vehículo"},
-  {id:12,name:"Antena G-6 Omni. VHF (137–162)/(162–174)",sku:"MR-801B",   gain:"6 dBi",  freq:"137–174 MHz", price:285000,  cat:"vhf", badge:null,         spec:"Doble rango · Omnidireccional · ALMOTCOM"},
+/* ─── DATA (mismo array que tienda.html) ─── */
+const IMG='./img/';
+const IMG_FALLBACK='https://industriasmaral.com/wp-content/uploads/2023/03/';
+const PRODUCTS=[
+  {id:'101',sku:'REF-101',name:'Antena 1/4 de Onda VHF',cat:'antena-vhf',brand:'MAXANT',price:37536,sale:28704,freq:'136–174 MHz',gain:'0 dBi',img:IMG+'101.png',desc:'Antena de cuarto de onda en varilla de acero inoxidable.',specs:[]},
+  {id:'101-1',sku:'REF-101-UHF',name:'Antena 1/4 de Onda UHF',cat:'antena-uhf',brand:'MAXANT',price:37536,sale:28704,freq:'430–512 MHz',gain:'0 dBi',img:IMG+'101-1.png',desc:'Antena de cuarto de onda para banda UHF.',specs:[]},
+  {id:'103',sku:'REF-103',name:'Antena Tipo MAXRAD VHF 5/8 — 3 dB',cat:'antena-vhf',brand:'MAXANT',price:116518,sale:89102,badge:'MAXANT',freq:'136–174 MHz',gain:'3 dBi',img:IMG+'103.png',desc:'Antena omnidireccional de alta ganancia tipo MAXRAD.',specs:[]},
+  {id:'103-3',sku:'REF-103-3',name:'Antena MAXRAD Antirobo VHF 5/8 — 3 dB',cat:'antena-vhf',brand:'MAXANT',price:157000,sale:120105,freq:'136–174 MHz',gain:'3 dBi',img:IMG+'103-3.png',desc:'Antena VHF antirobo con sistema de contacto por resorte especial.',specs:[]},
+  {id:'104',sku:'REF-104',name:'Antena MAXRAD VHF 5/8 3dB de Caña',cat:'antena-vhf',brand:'MAXANT',price:218960,sale:167440,badge:'PREMIUM',freq:'136–174 MHz',gain:'3 dBi',img:IMG+'104.png',desc:'Antena VHF de alta calidad con caña de acero inoxidable.',specs:[]},
+  {id:'106',sku:'REF-106',name:'Antena Tipo ANTENEX VHF 5/8 — 3 dB',cat:'antena-vhf',brand:'ANTENEX',price:116518,sale:89102,freq:'136–174 MHz',gain:'3 dBi',img:IMG+'106.png',desc:'Antena VHF tipo ANTENEX con bobina esmaltada.',specs:[]},
+  {id:'119',sku:'REF-119',name:'Antena 5/8 VHF Banda Marina',cat:'antena-vhf',brand:'MAXANT',price:150472,sale:115067,freq:'136–174 MHz',gain:'3 dBi',img:IMG+'119.png',desc:'Antena para banda marina VHF.',specs:[]},
+  {id:'111',sku:'REF-111',name:'Antena Tipo MAXRAD UHF 5/8 — 3 dB',cat:'antena-uhf',brand:'MAXANT',price:95404,sale:72956,freq:'430–512 MHz',gain:'3 dBi',img:IMG+'111.png',desc:'Antena UHF omnidireccional tipo MAXRAD.',specs:[]},
+  {id:'108',sku:'REF-108',name:'Antena Tipo ANTENEX UHF 7/8 — 5 dB',cat:'antena-uhf',brand:'ANTENEX',price:116518,sale:89102,badge:'5 dBi',freq:'430–512 MHz',gain:'5 dBi',img:IMG+'108.png',desc:'Antena UHF de alta ganancia tipo ANTENEX.',specs:[]},
+  {id:'107',sku:'REF-107',name:'Antena MAXRAD de Caña UHF 7/8 — 5 dB',cat:'antena-uhf',brand:'MAXANT',price:218960,sale:167440,badge:'PREMIUM',freq:'430–512 MHz',gain:'3 dBi',img:IMG+'107.png',desc:'Antena UHF de caña de acero inoxidable.',specs:[]},
+  {id:'105',sku:'REF-105',name:'Antena Tipo MAXRAD UHF 7/8 — 5 dB',cat:'antena-uhf',brand:'MAXANT',price:116518,sale:89102,badge:'5 dBi',freq:'430–512 MHz',gain:'5 dBi',img:IMG+'105.png',desc:'Antena UHF plástico ABS con tuercas cromadas.',specs:[]},
+  {id:'109',sku:'REF-109',name:'Antena Banda Baja 27–33 MHz',cat:'otras-bandas',brand:'MAXANT',price:257278,sale:196742,freq:'27–33 MHz',gain:'—',img:IMG+'109.png',desc:'Antena para frecuencias de banda baja.',specs:[]},
+  {id:'110',sku:'REF-110',name:'Antena Banda Aérea 118–136 MHz',cat:'otras-bandas',brand:'MAXANT',price:181815,sale:139035,freq:'118–136 MHz',gain:'3 dBi',img:IMG+'110.png',desc:'Antena para banda aérea civil.',specs:[]},
+  {id:'117',sku:'REF-117',name:'Antena 800 MHz',cat:'otras-bandas',brand:'MAXANT',price:60860,sale:46540,freq:'806–870 MHz',gain:'3 dBi',img:IMG+'117.png',desc:'Antena de cuarto de onda para banda 800 MHz.',specs:[]},
+  {id:'201',sku:'REF-201',name:'Base de Perforar 3/8"',cat:'base-perforar',brand:'MARAL',price:26393,sale:20183,freq:'—',gain:'—',img:IMG+'201.png',desc:'Base hexagonal de bronce-latón para perforación.',specs:[]},
+  {id:'203',sku:'REF-203',name:'Base de Perforar 3/4"',cat:'base-perforar',brand:'MARAL',price:31482,sale:24075,freq:'—',gain:'—',img:IMG+'203.png',desc:'Base roscada para perforación de 3/4".',specs:[]},
+  {id:'205',sku:'REF-205',name:'Base de Perforar 3/8" × 15mm',cat:'base-perforar',brand:'MARAL',price:31476,sale:24070,freq:'—',gain:'—',img:IMG+'205.png',desc:'Base especial para carrocerías más gruesas.',specs:[]},
+  {id:'206',sku:'REF-206',name:'Base de Perforar Araña 3/8"',cat:'base-perforar',brand:'MARAL',price:65482,sale:50075,freq:'—',gain:'—',img:IMG+'206.png',desc:'Base araña con placa galvanizada.',specs:[]},
+  {id:'207',sku:'REF-207',name:'Base de Perforar Tipo PL',cat:'base-perforar',brand:'MARAL',price:50182,sale:38375,freq:'—',gain:'—',img:IMG+'207.png',desc:'Base de perforar con conector tipo PL.',specs:[]},
+  {id:'301',sku:'REF-301',name:'Base de Pestaña Cromada',cat:'base-pestana',brand:'MARAL',price:48680,sale:37226,freq:'—',gain:'—',img:IMG+'301.png',desc:'Base de pestaña de acabado cromado de lujo.',specs:[]},
+  {id:'301-3',sku:'REF-301-3',name:'Base de Pestaña Cromada ATOS',cat:'base-pestana',brand:'MARAL',price:55461,sale:42411,freq:'—',gain:'—',img:IMG+'301-3.png',desc:'Base de pestaña ATOS con placa de acero inoxidable calibre 14.',specs:[]},
+  {id:'302',sku:'REF-302',name:'Base de Pestaña Uña Plástica',cat:'base-pestana',brand:'MARAL',price:48680,sale:37226,freq:'—',gain:'—',img:IMG+'302.png',desc:'Base de pestaña con uña de plástico negro.',specs:[]},
+  {id:'305',sku:'REF-305',name:'Base de L',cat:'base-pestana',brand:'MARAL',price:53176,sale:40664,freq:'—',gain:'—',img:IMG+'305.png',desc:'Base tipo L para instalación lateral.',specs:[]},
+  {id:'307',sku:'REF-307',name:'Base Magnética',cat:'base-pestana',brand:'MARAL',price:95209,sale:72807,badge:'POPULAR',freq:'—',gain:'—',img:IMG+'307.png',desc:'Base magnética de alta adherencia.',specs:[]},
+  {id:'308',sku:'REF-308',name:'Base de Pestaña Tipo PL',cat:'base-pestana',brand:'MARAL',price:62261,sale:47611,freq:'—',gain:'—',img:IMG+'308.png',desc:'Base de pestaña con conector tipo PL.',specs:[]},
+  {id:'315-PL',sku:'REF-315-PL',name:'Base con Radiales PL',cat:'base-pestana',brand:'MARAL',price:130594,sale:99866,badge:'COMPLETA',freq:'—',gain:'—',img:IMG+'315-PL.png',desc:'Base completa con radiales de acero inoxidable.',specs:[]},
+  {id:'MR801',sku:'MR-801',name:'Antena G-6 Omni. VHF 137–174 MHz',cat:'estacion-base',brand:'ALMOTCOM',badge:'ALMOTCOM',price:380000,sale:null,freq:'137–174 MHz',gain:'6 dBi',img:IMG+'mr801.svg',desc:'Antena omnidireccional G-6 para estaciones base VHF.',specs:[]},
+  {id:'MR801B',sku:'MR-801B',name:'Antena G-6 Omni. VHF Doble Rango',cat:'estacion-base',brand:'ALMOTCOM',price:385000,sale:null,freq:'137–174 MHz',gain:'6 dBi',img:IMG+'mr801b.svg',desc:'Antena omnidireccional G-6 doble rango VHF.',specs:[]},
+  {id:'MR802',sku:'MR-802',name:'Antena G-7 Omni. UHF 430–470 MHz',cat:'estacion-base',brand:'ALMOTCOM',badge:'ALMOTCOM',price:410000,sale:null,freq:'430–470 MHz',gain:'7 dBi',img:IMG+'mr802.svg',desc:'Antena omnidireccional G-7 para estaciones base UHF.',specs:[]},
+  {id:'MR803',sku:'MR-803',name:'Antena G-6 Omni. VHF Aérea 118–136 MHz',cat:'estacion-base',brand:'ALMOTCOM',price:390000,sale:null,freq:'118–136 MHz',gain:'6 dBi',img:IMG+'mr803.svg',desc:'Antena omnidireccional G-6 para banda aérea civil.',specs:[]},
+  {id:'MR805',sku:'MR-805',name:'Antena G-3 Omni. VHF 137–174 MHz',cat:'estacion-base',brand:'ALMOTCOM',price:280000,sale:null,freq:'137–174 MHz',gain:'3 dBi',img:IMG+'mr805.svg',desc:'Antena omnidireccional compacta G-3.',specs:[]},
+  {id:'MR415',sku:'MR-415',name:'Antena Yagi VHF 1 Dipolo Telescópica',cat:'estacion-base',brand:'MAXANT',price:220000,sale:null,freq:'136–174 MHz',gain:'2 dBi',img:IMG+'mr415.svg',desc:'Antena Yagi de un dipolo telescópica VHF.',specs:[]},
+  {id:'MR416',sku:'MR-416',name:'Antena Yagi 5 Elementos Telescópica VHF',cat:'estacion-base',brand:'MAXANT',badge:'MAXANT',price:450000,sale:null,freq:'136–174 MHz',gain:'9 dBi',img:IMG+'mr416.svg',desc:'Antena Yagi MAXANT de 5 elementos telescópica.',specs:[]},
+  {id:'MR4302',sku:'MR-430-2',name:'Antena Yagi 3 Elementos UHF',cat:'estacion-base',brand:'MAXANT',price:380000,sale:null,freq:'400–470 MHz',gain:'7 dBi',img:IMG+'mr430-2.svg',desc:'Antena Yagi MAXANT de 3 elementos para UHF.',specs:[]},
+  {id:'MR430',sku:'MR-430',name:'Antena Yagi Direccional 7 Elementos UHF',cat:'estacion-base',brand:'MAXANT',badge:'MAXANT',price:580000,sale:null,freq:'400–470 MHz',gain:'10 dBi',img:IMG+'mr430.svg',desc:'Antena Yagi MAXANT de alta ganancia con 7 elementos.',specs:[]},
+  {id:'K-301A',sku:'KIT-301A',name:'Kit: Base Cromada + Cable + Miniconector',cat:'kit',brand:'MARAL',price:98600,sale:75400,badge:'KIT',freq:'136–174 / 430–512 MHz',gain:'—',img:IMG+'301.png',desc:'Kit completo para instalación vehicular profesional.',specs:[]},
 ];
+function cop(n){return n.toLocaleString('es-CO')}
+function discPct(p){if(!p.sale||p.sale>=p.price)return 0;return Math.round((1-p.sale/p.price)*100)}
 
 /* ─── ANTENNA SVG ─── */
 function antSVG(sz=100){
@@ -1504,34 +1507,43 @@ function initRvObs(){
 }
 
 function renderProds(filter='all'){
-  const grid = document.getElementById('prod-grid');
-  const list = filter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===filter);
-  grid.innerHTML = list.map(p=>`
-    <div class="prod-card rv">
-      <div class="prod-img-wrap">
-        ${p.badge?`<div class="prod-badge2">${p.badge}</div>`:''}
-        ${antSVG(80)}
+  const catMap={all:'all',vhf:'antena-vhf',uhf:'antena-uhf',base:'estacion-base',kit:'kit',acc:'base-perforar'};
+  const cat=catMap[filter]||'all';
+  const grid=document.getElementById('prod-grid');
+  const list=cat==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===cat);
+  const imgErr=`if(!this.dataset.fb){this.dataset.fb=1;this.src='${IMG_FALLBACK}'+this.src.split('/').pop()}else{this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23f0f2f8%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2230%22>📡</text></svg>'}`;
+  grid.innerHTML=list.map(p=>{
+    const disc=discPct(p);
+    const mainPrice=p.sale||p.price;
+    const oldPrice=p.sale&&p.sale<p.price?`<div style="font-family:var(--m);font-size:10px;color:var(--txt3);text-decoration:line-through">$${cop(p.price)}</div>`:'';
+    return `<div class="pcard" onclick="window.location.href='tienda.html'">
+      <div class="pcard-img">
+        <div class="pcard-img-bg"></div>
+        ${p.badge?`<div class="pcard-badge">${p.badge}</div>`:''}
+        ${disc?`<div class="pcard-disc">-${disc}%</div>`:''}
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="${imgErr}">
       </div>
-      <div class="prod-body2">
-        <div class="prod-sku2">${p.sku}</div>
-        <div class="prod-name2">${p.name}</div>
-        <div class="prod-spec2">${p.gain} · ${p.freq}<br>${p.spec}</div>
+      <div class="pcard-body">
+        <div class="pcard-sku">${p.sku}</div>
+        <div class="pcard-name">${p.name}</div>
+        <div class="pcard-price-inline">
+          <span style="font-family:var(--m);font-size:16px;font-weight:700;color:var(--navy)"><small style="font-size:9px;color:var(--txt3);font-weight:400">COP </small>$${cop(mainPrice)}</span>
+          ${disc?`<span style="font-family:var(--m);font-size:10px;font-weight:700;color:var(--green);margin-left:6px">-${disc}%</span>`:''}
+        </div>
+        <div class="pcard-freq">${p.freq!=='—'?p.freq:''}</div>
       </div>
-      <div class="prod-footer2">
-        <div class="prod-price2"><small>COP</small>${p.price.toLocaleString('es-CO')}</div>
-        <button class="btn-add2" data-id="${p.id}">+ Agregar</button>
+      <div class="pcard-foot">
+        ${oldPrice}
+        <button class="btn-add-p" onclick="event.stopPropagation();addToCart('${p.id}')">+ Agregar</button>
       </div>
-    </div>`).join('');
-
-  grid.querySelectorAll('.rv').forEach(el=>rvObs&&rvObs.observe(el));
-  grid.querySelectorAll('.btn-add2').forEach(btn=>{
-    btn.addEventListener('click',e=>{e.stopPropagation();addToCart(+btn.dataset.id)});
-  });
+    </div>`;
+  }).join('');
+  grid.querySelectorAll('.pcard').forEach(el=>rvObs&&rvObs.observe(el));
 }
 
 /* Star fill for testimonials */
 document.querySelectorAll('.testi2-stars').forEach(el=>{
-  el.innerHTML = Array(5).fill('<div class="star2"></div>').join('');
+  el.innerHTML=Array(5).fill('<div class="star2"></div>').join('');
 });
 
 document.querySelectorAll('.ftab').forEach(btn=>{
@@ -1552,7 +1564,7 @@ function showToast(msg){
   setTimeout(()=>t.classList.remove('show'),2500);
 }
 function addToCart(id){
-  const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
+  const p=PRODUCTS.find(x=>x.id===id||x.id===String(id));if(!p)return;
   const ex=cart.find(x=>x.id===id);
   ex?ex.qty++:cart.push({id,qty:1});
   saveCart();updateBadge();renderCart();
