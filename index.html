@@ -1284,7 +1284,7 @@ function antSVGSm(){
 }
 
 /* ─── D3 GLOBE HERO ─── */
-(function initGlobe(){
+try{(function initGlobe(){
   const canvas = document.getElementById('hero-canvas');
   const ctx = canvas.getContext('2d');
 
@@ -1487,7 +1487,7 @@ function antSVGSm(){
     .catch(()=>{/* animate without dots on network error */});
 
   loop();
-})();
+})()}catch(e){console.warn('Globe init failed:',e)}
 
 /* ─── PRODUCTS ─── */
 let rvObs;
@@ -1641,7 +1641,7 @@ initRvObs();
 renderProds();
 
 /* ─── RADAR CANVAS ─── */
-(function initRadar(){
+try{(function initRadar(){
   const cv = document.getElementById('radar-canvas');
   if(!cv) return;
   const wrap = cv.parentElement;
@@ -1782,7 +1782,12 @@ renderProds();
 
   function loop(){ requestAnimationFrame(loop); draw(); }
   loop();
-})();
+})()}catch(e){console.warn('Radar init failed:',e)}
+
+/* ─── VISIBILITY FALLBACK ─── */
+setTimeout(()=>{
+  document.querySelectorAll('.rv:not(.vis)').forEach(el=>el.classList.add('vis'));
+},800);
 </script>
 </body>
 </html>
